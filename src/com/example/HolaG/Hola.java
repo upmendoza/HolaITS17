@@ -23,6 +23,27 @@ public class Hola extends Activity
                     Toast.makeText(getApplicationContext(),"Alberto villa",Toast.LENGTH_LONG).show();
                 }
             });
-        }
-}
+        
 
+        Button Fito = (Button)findViewById(R.id.btnfito);
+
+        Fito.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Toast.makeText(getApplicationContext(),"Rodolfo :D :P",Toast.LENGTH_LONG).show();
+            }
+
+        });
+
+        Button bjavier = (Button) findViewById(R.id.button_javier);
+
+        bjavier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Button Javier",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+}
