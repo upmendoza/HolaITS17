@@ -27,5 +27,14 @@ public class Hola extends Activity
             }
 
         });
+
+        Button bjavier = (Button) findViewById(R.id.button_javier);
+
+        bjavier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Button Javier",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
