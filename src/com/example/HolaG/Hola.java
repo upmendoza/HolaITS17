@@ -45,5 +45,14 @@ public class Hola extends Activity
                 Toast.makeText(getApplicationContext(),"Button Javier",Toast.LENGTH_LONG).show();
             }
         });
+
+        Button bdulce = (Button) findViewById(R.id.button_dulce);
+
+        bdulce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Button Dulce :DD",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
