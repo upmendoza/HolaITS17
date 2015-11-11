@@ -11,6 +11,9 @@ public class Hola extends Activity
     /** Called when the activity is first created. */
     
     //BIENVENIDOS ESTUDIANTES//
+
+
+    /*JUAN MARTINEZ*/
     
     @Override
     public void onCreate(Bundle savedInstanceState)
