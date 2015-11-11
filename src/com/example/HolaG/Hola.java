@@ -9,6 +9,9 @@ import android.widget.Toast;
 public class Hola extends Activity
 {
     /** Called when the activity is first created. */
+    
+    //BIENVENIDOS ESTUDIANTES//
+    
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
