@@ -11,6 +11,7 @@ public class Hola extends Activity
     /** Called when the activity is first created. */
     
     //BIENVENIDOS ESTUDIANTES//
+    //Makashi32 esta presente!//
     //hola maestro ulises soy jaime y jacel...
     
     @Override
