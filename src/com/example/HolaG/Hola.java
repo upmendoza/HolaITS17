@@ -11,7 +11,7 @@ public class Hola extends Activity
     /** Called when the activity is first created. */
     
     //BIENVENIDOS ESTUDIANTES//
-
+    //TheObserver te Observa//
 
     /*JUAN MARTINEZ*/
     
