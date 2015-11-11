@@ -15,6 +15,8 @@ public class Hola extends Activity
     //hola maestro ulises soy jaime y jacel...
     //TheObserver te Observa//
 
+    //nuevos cambios
+
     /*JUAN MARTINEZ*/
 
     @Override
