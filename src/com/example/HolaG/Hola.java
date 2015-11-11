@@ -13,7 +13,10 @@ public class Hola extends Activity
     //BIENVENIDOS ESTUDIANTES//
     //Makashi32 esta presente!//
     //hola maestro ulises soy jaime y jacel...
-    
+    //TheObserver te Observa//
+
+    /*JUAN MARTINEZ*/
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
