@@ -18,7 +18,7 @@ public class Hola extends Activity
     //nuevos cambios
 
     /*JUAN MARTINEZ*/
-//    JorshxD
+    /*JorshxD was here*/
 
     @Override
     public void onCreate(Bundle savedInstanceState)
