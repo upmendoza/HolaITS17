@@ -28,13 +28,26 @@ public class Login extends Activity
         Datos login = new Datos(); // objeto para validar datos de login
 
         iniciar.setOnClickListener(new View.OnClickListener() {
+            int contador = 0;
             @Override
             public void onClick(View v) {
                 //validar los datos de login con la informacion que se tiene en la BD
                 if(login.validarLogin(user.getText().toString(), pass.getText().toString()))
+                {
+
                     Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplication(),"Datos Erroneos",Toast.LENGTH_SHORT).show();
+                    contador = 0;
+                }
+
+                else{
+                    contador ++;
+                    if(contador == 5){
+                        contador=0;
+                        Toast.makeText(getApplication(),"Demaciados intentos ",Toast.LENGTH_LONG).show();
+                    }else {
+                        Toast.makeText(getApplication(), "Datos Erroneos ", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 
