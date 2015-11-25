@@ -3,6 +3,8 @@
     <string name="app_name">Factúralo</string>
     <string name="login_usr">Usuario:</string>
     <string name="login_pass">Contraseña:</string>
+    <string name="fecha_factura">Fecha:</string>
+    <string name="hacer_factura">Datos de factura</string>
     <color name="red">#ffff0b24</color>
     <color name="gray">#cccccc</color>
     <color name="white">#ffffff</color>
