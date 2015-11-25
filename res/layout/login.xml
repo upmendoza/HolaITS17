@@ -61,7 +61,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:textAppearance="?android:attr/textAppearanceMedium"
-				android:text="Contraseña:"
+				android:text="@string/login_pass"
 				android:id="@+id/textView3"
 				android:layout_below="@+id/etUsuario"
 				android:layout_alignParentLeft="true"/>

@@ -1,6 +1,7 @@
 package com.example.HolaG;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,8 +38,8 @@ public class Login extends Activity
 
                     Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
                     contador = 0;
+                    pasarActividad(v);
                 }
-
                 else{
                     contador ++;
                     if(contador == 5){
@@ -50,6 +51,10 @@ public class Login extends Activity
                 }
             }
         });
-
+    }
+    public void pasarActividad(View v)
+    {
+        Intent Act=new Intent(this,HacerFactura.class);
+        startActivity(Act);
     }
 }
