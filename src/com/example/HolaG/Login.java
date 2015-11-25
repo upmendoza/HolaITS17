@@ -37,16 +37,22 @@ public class Login extends Activity
                 {
 
                     Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
+                    user.setText("");
+                    pass.setText("");
                     contador = 0;
                     pasarActividad(v);
                 }
                 else{
                     contador ++;
-                    if(contador == 5){
+                    if(contador == 5)
+                    {
                         contador=0;
                         Toast.makeText(getApplication(),"Demaciados intentos ",Toast.LENGTH_LONG).show();
+
                     }else {
                         Toast.makeText(getApplication(), "Datos Erroneos ", Toast.LENGTH_SHORT).show();
+                        user.setText("");
+                        pass.setText("");
                     }
                 }
             }
