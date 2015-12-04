@@ -17,8 +17,8 @@ public class Datos {
     }
 
     public void addLogin(String user, String password){
-        this.user.addLast(user);
-        this.password.addLast(password);
+        this.user.add(user);
+        this.password.add(password);
     }
 
     public boolean validarLogin(String user, String password){

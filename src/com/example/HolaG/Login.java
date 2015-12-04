@@ -12,9 +12,9 @@ public class Login extends Activity
 {
     /** Called when the activity is first created. */
 
-    private Button iniciar;
+    private Button iniciar, registrar;
     private EditText user,pass;
-
+    Datos login = new Datos(); // objeto para validar datos de login
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -24,9 +24,8 @@ public class Login extends Activity
         user = (EditText) findViewById(R.id.etUsuario); //campo de usuario
         pass = (EditText) findViewById(R.id.etPass); //campo de password
 
+        registrar = (Button)findViewById(R.id.btRegistrar);
         iniciar = (Button) findViewById(R.id.btIniciar); // boton iniciar
-
-        Datos login = new Datos(); // objeto para validar datos de login
 
         iniciar.setOnClickListener(new View.OnClickListener() {
             int contador = 0;
@@ -40,7 +39,7 @@ public class Login extends Activity
                     user.setText("");
                     pass.setText("");
                     contador = 0;
-                    pasarActividad(v);
+                    irFactura();
                 }
                 else{
                     contador ++;
@@ -57,10 +56,27 @@ public class Login extends Activity
                 }
             }
         });
+        registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irRegistro();
+            }
+
+        });
+
     }
-    public void pasarActividad(View v)
+    public void irRegistro()
     {
-        Intent Act=new Intent(this,HacerFactura.class);
+        Intent Act=new Intent(this,RegistroUsuario.class);
         startActivity(Act);
+    }
+
+    public void irFactura(){
+        Intent act = new Intent(this,HacerFactura.class);
+        startActivity(act);
+    }
+
+    public void registrarUsuario(String user, String pass){
+        login.addLogin(user,pass);
     }
 }
