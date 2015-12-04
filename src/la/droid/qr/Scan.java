@@ -7,13 +7,8 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 import com.example.HolaG.R;
 
-/**
- * Created by Jorge on 04/12/15.
- */
 public class Scan extends Activity {
 
     private static final int ACTIVITY_RESULT_QR_DRDROID = 0;
@@ -28,7 +23,7 @@ public class Scan extends Activity {
         //final Spinner spinner = (Spinner) findViewById(R.id.spin_complete);
 
         //"Scan" button
-        final Button button = (Button) findViewById(R.id.hacerFactura);
+        final Button button = (Button) findViewById(R.id.btnEscanear);
         //Set action to button
         button.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -63,9 +58,9 @@ public class Scan extends Activity {
             //Read result from QR Droid (it's stored in la.droid.qr.result)
             String result = data.getExtras().getString(Services.RESULT);
             //Just set result to EditText to be able to view it
-            EditText resultTxt = ( EditText ) findViewById(R.id.result);
-            resultTxt.setText( result );
-            resultTxt.setVisibility(View.VISIBLE);
+//            EditText resultTxt = ( EditText ) findViewById(R.id.result);
+//            resultTxt.setText( result );
+//            resultTxt.setVisibility(View.VISIBLE);
         }
     }
 
