@@ -17,7 +17,6 @@ public class RegistroUsuario extends Activity {
     private EditText user,pass,nombre,apellido,direccion,tel,mail,cp;
 
 
-    @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -27,10 +26,10 @@ public class RegistroUsuario extends Activity {
 
         registrar = (Button)findViewById(R.id.btRegistrar);
 
-        Datos login = new Datos();
+        final Datos login = new Datos();
 
-        registrar.setOnClickListener(new View.OnClickListener() {
-            @Override
+        registrar.setOnClickListener(new View.OnClickListener()
+        {
             public void onClick(View v) {
                 login.addLogin(user.getText().toString(), pass.getText().toString());
                 Toast.makeText(getApplication(),"Registro Exitoso",Toast.LENGTH_SHORT).show();

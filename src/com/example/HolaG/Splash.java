@@ -11,12 +11,10 @@ import android.view.Window;
 /**
  * Created by Jorge on 25/11/15.
  */
-
 public class Splash extends Activity {
 
     private static final long SPLASH_SCREEN_DELAY = 3000;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -26,10 +24,8 @@ public class Splash extends Activity {
         setContentView(R.layout.splash);
 
         TimerTask task = new TimerTask() {
-            @Override
             public void run() {
-                Intent mainIntent = new Intent().setClass(
-                        Splash.this, Login.class);
+                Intent mainIntent = new Intent().setClass(Splash.this, Login.class);
                 startActivity(mainIntent);
                 finish();
             }
