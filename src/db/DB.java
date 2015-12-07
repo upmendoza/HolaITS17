@@ -13,16 +13,28 @@ public class DB extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Facturalo.db";
 
+    public static final String ID = "id";
+    public static final String NOMBRE = "nombre";
+    public static final String APELLIDO = "apellido";
+    public static final String DIRECCION = "direccion";
+    public static final String TELEFONO = "telefono";
+    public static final String EMAIL = "email";
+    public static final String CP = "cp";
+    public static final String USER = "usuario";
+    public static final String PASS = "password";
+
+
+
     public static final String USUARIOS_TABLA = "CREATE TABLE usuarios (" +
-            "id integer primary key autoincrement," +
-            " nombre text NOT NULL," +
-            " apellido text NOT NULL," +
-            " direccion text NOT NULL," +
-            " Telefono text NOT NULL," +
-            " email text NOT NULL," +
-            " cp text NOT NULL," +
-            " usuario text NOT NULL," +
-            " password text NOT NULL";
+            ID + " integer primary key autoincrement," +
+            NOMBRE + "  text NOT NULL," +
+            APELLIDO +  " text NOT NULL," +
+            DIRECCION + " text NOT NULL," +
+            TELEFONO + "  text NOT NULL," +
+            EMAIL + " text NOT NULL," +
+            CP + " text NOT NULL," +
+            USER + " text NOT NULL," +
+            PASS + " password text NOT NULL";
 
     public DB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -37,17 +49,5 @@ public class DB extends SQLiteOpenHelper {
 
     }
 
-    public void agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
 
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-
-
-//        values.put("nombre", n);
-//
-//        db.insert("nombre", null, values);
-        db.close();
-
-    }
 }

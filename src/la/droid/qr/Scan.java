@@ -19,9 +19,6 @@ public class Scan extends Activity {
 
         setContentView(R.layout.hacer_factura);
 
-        //Get Spinner instance
-        //final Spinner spinner = (Spinner) findViewById(R.id.spin_complete);
-
         //"Scan" button
         final Button button = (Button) findViewById(R.id.btnEscanear);
         //Set action to button
@@ -31,13 +28,6 @@ public class Scan extends Activity {
                 //Create a new Intent to send to QR Droid
                 Intent qrDroid = new Intent( Services.SCAN ); //Set action "la.droid.qr.scan"
 
-                //Check whether a complete or displayable result is needed
-//                if( spinner.getSelectedItemId()==0 ) { //First item selected ("Complete content")
-//                    //Notify we want complete results (default is FALSE)
-//                    qrDroid.putExtra( Services.COMPLETE , true);
-//                }
-
-                //Send intent and wait result
                 try {
                     startActivityForResult(qrDroid, ACTIVITY_RESULT_QR_DRDROID);
                 } catch (ActivityNotFoundException activity) {
@@ -55,18 +45,13 @@ public class Scan extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if( ACTIVITY_RESULT_QR_DRDROID==requestCode && null!=data && data.getExtras()!=null ) {
-            //Read result from QR Droid (it's stored in la.droid.qr.result)
             String result = data.getExtras().getString(Services.RESULT);
-            //Just set result to EditText to be able to view it
-//            EditText resultTxt = ( EditText ) findViewById(R.id.result);
-//            resultTxt.setText( result );
-//            resultTxt.setVisibility(View.VISIBLE);
+
         }
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        //Nothing
     }
 }
