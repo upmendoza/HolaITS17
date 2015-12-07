@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import db.DBAdapter;
 
 public class Login extends Activity
 {
@@ -27,14 +28,16 @@ public class Login extends Activity
         registrar = (Button)findViewById(R.id.btRegistrar);
         iniciar = (Button) findViewById(R.id.btIniciar); // boton iniciar
 
+       final DBAdapter bd = new DBAdapter(getApplicationContext());
+
         iniciar.setOnClickListener(new View.OnClickListener() {
             int contador = 0;
             @Override
             public void onClick(View v) {
                 //validar los datos de login con la informacion que se tiene en la BD
-                if(login.validarLogin(user.getText().toString(), pass.getText().toString()))
+//                if(login.validarLogin(user.getText().toString(), pass.getText().toString()))
+                if(bd.validarLogin(user.getText().toString(),pass.getText().toString()))
                 {
-
                     Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
                     user.setText("");
                     pass.setText("");

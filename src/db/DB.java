@@ -13,7 +13,7 @@ public class DB extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Facturalo.db";
 
-    public static final String ID = "id";
+    public static final String ID = "_id";
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
     public static final String DIRECCION = "direccion";
@@ -26,16 +26,16 @@ public class DB extends SQLiteOpenHelper {
 
 
 
-    public static final String USUARIOS_TABLA = "CREATE TABLE"+ TABLE_NAME  +"(" +
+    public static final String USUARIOS_TABLA = "CREATE TABLE "+ TABLE_NAME  +" (" +
             ID + " integer primary key autoincrement," +
-            NOMBRE + "  text NOT NULL," +
-            APELLIDO +  " text NOT NULL," +
-            DIRECCION + " text NOT NULL," +
-            TELEFONO + "  text NOT NULL," +
-            EMAIL + " text NOT NULL," +
-            CP + " text NOT NULL," +
-            USER + " text NOT NULL," +
-            PASS + " password text NOT NULL";
+            NOMBRE + " text NOT NULL, " +
+            APELLIDO +  " text NOT NULL, " +
+            DIRECCION + " text NOT NULL, " +
+            TELEFONO + " text NOT NULL, " +
+            EMAIL + " text NOT NULL, " +
+            CP + " text NOT NULL, " +
+            USER + " text NOT NULL, " +
+            PASS + " password text NOT NULL);";
 
     public DB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

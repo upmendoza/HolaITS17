@@ -1,8 +1,8 @@
 package db;
 
-
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public class DBAdapter {
 
+    public static final String ID = "_id";
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
     public static final String DIRECCION = "direccion";
@@ -40,6 +41,7 @@ public class DBAdapter {
     public void agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
 
         ContentValues values = new ContentValues();
+//        values.put(ID,1);
         values.put(NOMBRE, n);
         values.put(APELLIDO, ap);
         values.put(DIRECCION, dir);
@@ -49,6 +51,19 @@ public class DBAdapter {
         values.put(USER, user);
         values.put(PASS, pass);
         db.insert(TABLE_NAME, null, values);
+    }
+
+    public boolean validarLogin(String user, String pass){
+        this.open();
+        Cursor MiCursor = db.query(TABLE_NAME, new String[]{USER, PASS}, "usuario = ? and password = ?",
+                new String[]{user, pass}, null, null, null);
+        if(MiCursor != null)
+            if (MiCursor.getCount() > 0)
+                return true;
+            else
+                return false;
+        else
+            return false;
     }
 
 
