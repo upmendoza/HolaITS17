@@ -1,6 +1,7 @@
 package db;
 
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,9 +20,11 @@ public class DBAdapter {
     public static final String USER = "usuario";
     public static final String PASS = "password";
 
+    public static final String TABLE_NAME = "usuarios";
 
     private Context context;
     private DB dbHelper;
+    private SQLiteDatabase db;
 
     public DBAdapter(Context context) {
         this.context = context;
@@ -29,7 +32,7 @@ public class DBAdapter {
 
     public DBAdapter open() throws SQLException {
         dbHelper = new DB(context);
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db = dbHelper.getWritableDatabase();
         return this;
     }
 
@@ -39,7 +42,18 @@ public class DBAdapter {
 
     public void agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
 
-
-
+        ContentValues values = new ContentValues();
+        values.put(NOMBRE, n);
+        values.put(APELLIDO, ap);
+        values.put(DIRECCION, dir);
+        values.put(TELEFONO, tel);
+        values.put(EMAIL, email);
+        values.put(CP, cp);
+        values.put(USER, user);
+        values.put(PASS, pass);
+        db.insert(TABLE_NAME, null, values);
     }
+
+
+
 }

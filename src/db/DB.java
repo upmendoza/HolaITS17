@@ -22,10 +22,11 @@ public class DB extends SQLiteOpenHelper {
     public static final String CP = "cp";
     public static final String USER = "usuario";
     public static final String PASS = "password";
+    public static final String TABLE_NAME = "usuarios";
 
 
 
-    public static final String USUARIOS_TABLA = "CREATE TABLE usuarios (" +
+    public static final String USUARIOS_TABLA = "CREATE TABLE"+ TABLE_NAME  +"(" +
             ID + " integer primary key autoincrement," +
             NOMBRE + "  text NOT NULL," +
             APELLIDO +  " text NOT NULL," +
