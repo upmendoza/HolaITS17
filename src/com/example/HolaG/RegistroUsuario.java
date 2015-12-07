@@ -24,10 +24,11 @@ public class RegistroUsuario extends Activity {
         setContentView(R.layout.registro_usuario);
         user = (EditText) findViewById(R.id.etUsuario); //campo de usuario
         pass = (EditText) findViewById(R.id.etPassword); //campo de password
-        pass = (EditText) findViewById(R.id.etPassword); //campo de password
-        pass = (EditText) findViewById(R.id.etPassword); //campo de password
-        pass = (EditText) findViewById(R.id.etPassword); //campo de password
-        pass = (EditText) findViewById(R.id.etPassword); //campo de password
+
+//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
+//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
+//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
+//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
 
         registrar = (Button)findViewById(R.id.btRegistrar);
 
@@ -40,9 +41,9 @@ public class RegistroUsuario extends Activity {
 
 //                login.addLogin(user.getText().toString(), pass.getText().toString());
 
-                bd.agregar( user.getText().toString(),
-
-                        );
+//                bd.agregar( user.getText().toString(),
+//
+//                        );
 
                 Toast.makeText(getApplication(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
                 irLogin();
