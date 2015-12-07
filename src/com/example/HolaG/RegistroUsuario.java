@@ -15,25 +15,28 @@ import db.DBAdapter;
 public class RegistroUsuario extends Activity {
 
     private Button registrar;
-    private EditText user,pass,nombre,apellido,direccion,tel,mail,cp;
+    private EditText usuario,pass,nombre,apellido,direccion,tel,mail,cp;
 
 
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registro_usuario);
-        user = (EditText) findViewById(R.id.etUsuario); //campo de usuario
-        pass = (EditText) findViewById(R.id.etPassword); //campo de password
+        usuario = (EditText) findViewById(R.id.txtUsuario); //campo de usuario
+        pass = (EditText) findViewById(R.id.txtPassword); //campo de password
+        nombre = (EditText) findViewById(R.id.txtNombre); //campo de nombre
+        apellido = (EditText) findViewById(R.id.txtApellido); //campo de apellido
+        direccion = (EditText) findViewById(R.id.txtDireccion); //campo de direccion
+        tel = (EditText) findViewById(R.id.txtTelefono); //campo de telefono
+        mail = (EditText) findViewById(R.id.txteMail); //campo de email
+        cp = (EditText) findViewById(R.id.txtCodigoPostal); //campo de codigo postal
 
-//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
-//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
-//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
-//        pass = (EditText) findViewById(R.id.etPassword); //campo de password
+
 
         registrar = (Button)findViewById(R.id.btRegistrar);
 
         final Datos login = new Datos();
-        DBAdapter bd = new DBAdapter(this.getApplicationContext());
+        final DBAdapter bd = new DBAdapter(this.getApplicationContext());// ponia el error que tenia qe ser final
 
         registrar.setOnClickListener(new View.OnClickListener()
         {
@@ -41,9 +44,15 @@ public class RegistroUsuario extends Activity {
 
 //                login.addLogin(user.getText().toString(), pass.getText().toString());
 
-//                bd.agregar( user.getText().toString(),
-//
-//                        );
+                         bd.agregar(nombre.getText().toString(),
+                                 apellido.getText().toString(),
+                                 direccion.getText().toString(),
+                                 tel.getText().toString(),
+                                 mail.getText().toString(),
+                                 cp.getText().toString(),
+                                 usuario.getText().toString(),
+                                 pass.getText().toString());
+
 
                 Toast.makeText(getApplication(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
                 irLogin();

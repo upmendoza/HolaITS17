@@ -10,18 +10,18 @@ import android.widget.Toast;
 
 public class Login extends Activity
 {
+   public static Datos login = new Datos(); // objeto para validar datos de login
     /** Called when the activity is first created. */
 
     private Button iniciar, registrar;
     private EditText user,pass;
-    Datos login = new Datos(); // objeto para validar datos de login
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        user = (EditText) findViewById(R.id.etUsuario); //campo de usuario
+        user = (EditText) findViewById(R.id.txtUsuario); //campo de usuario
         pass = (EditText) findViewById(R.id.etPass); //campo de password
 
         registrar = (Button)findViewById(R.id.btRegistrar);

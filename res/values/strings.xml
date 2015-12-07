@@ -12,6 +12,7 @@
     <color name="red">#ffff0b24</color>
     <color name="gray">#cccccc</color>
     <color name="white">#ffffff</color>
+    <string name="registro_usuarios">Registro Usuario</string>
 
     <!-- Titles -->
     <string name="scan">Scan</string>

@@ -29,17 +29,14 @@ public class DBAdapter {
     public DBAdapter(Context context) {
         this.context = context;
     }
-
     public DBAdapter open() throws SQLException {
         dbHelper = new DB(context);
         db = dbHelper.getWritableDatabase();
         return this;
     }
-
     public void close (){
         dbHelper.close();
     }
-
     public void agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
 
         ContentValues values = new ContentValues();

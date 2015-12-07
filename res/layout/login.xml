@@ -44,7 +44,7 @@
 				android:layout_height="wrap_content"
 				android:inputType="textPersonName"
 				android:ems="10"
-				android:id="@+id/etUsuario"
+				android:id="@+id/txtUsuario"
 				android:hint="Nombre de Usuario"
 				android:layout_below="@+id/textView2"
 				android:layout_alignParentLeft="true"/>
@@ -54,7 +54,7 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:text="@string/login_pass"
 				android:id="@+id/textView3"
-				android:layout_below="@+id/etUsuario"
+				android:layout_below="@+id/txtUsuario"
 				android:layout_alignParentLeft="true"/>
 	<EditText
 				android:layout_width="match_parent"
