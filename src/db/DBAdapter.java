@@ -38,10 +38,9 @@ public class DBAdapter {
     public void close (){
         dbHelper.close();
     }
-    public void agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
-
+    public long agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
+        this.open();
         ContentValues values = new ContentValues();
-//        values.put(ID,1);
         values.put(NOMBRE, n);
         values.put(APELLIDO, ap);
         values.put(DIRECCION, dir);
@@ -50,7 +49,7 @@ public class DBAdapter {
         values.put(CP, cp);
         values.put(USER, user);
         values.put(PASS, pass);
-        db.insert(TABLE_NAME, null, values);
+        return db.insert(TABLE_NAME, null, values);
     }
 
     public boolean validarLogin(String user, String pass){

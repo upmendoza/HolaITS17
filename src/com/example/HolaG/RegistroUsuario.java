@@ -33,7 +33,7 @@ public class RegistroUsuario extends Activity {
 
 
 
-        registrar = (Button)findViewById(R.id.btRegistrar);
+        registrar = (Button)findViewById(R.id.btnRegistrar);
 
         final Datos login = new Datos();
         final DBAdapter bd = new DBAdapter(this.getApplicationContext());// ponia el error que tenia qe ser final
