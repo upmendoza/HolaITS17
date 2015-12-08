@@ -19,10 +19,11 @@ public class HacerFactura extends Activity
 
     private static final int ACTIVITY_RESULT_QR_DRDROID = 0;
     private EditText nombre;
+    private Button aceptar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        aceptar = (Button) findViewById(R.id.btnHacerFactura);
         setContentView(R.layout.hacer_factura);
 
         //Get Spinner instance
@@ -51,6 +52,17 @@ public class HacerFactura extends Activity
                 }
             }
         });
+        //--------------------------------Action Listener para Realizar la factura -------------------------------------
+        aceptar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //Ver si podemos pasar result y hacerlo global para condicional que hay datos escaneados
+
+            }
+        });
+        //--------------------------------------------------------------------------------------------------------------
     }
 
     @Override
@@ -78,4 +90,9 @@ public class HacerFactura extends Activity
         super.onConfigurationChanged(newConfig);
         //Nothing
     }
+    public void irVErFactura(){
+        Intent act = new Intent(this,verFactura.class);
+        startActivity(act);
+    }
+
 }

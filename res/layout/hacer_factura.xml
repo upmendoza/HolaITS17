@@ -56,7 +56,8 @@
                     android:inputType="date"
                     android:ems="6"
                     android:id="@+id/editText2"
-                    android:layout_above="@+id/editText" android:layout_toLeftOf="@+id/button3"/>
+                    android:layout_above="@+id/editText" android:layout_toLeftOf="@+id/btnHacerFactura"
+                    android:layout_alignLeft="@+id/editText"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -103,21 +104,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cancelar"
-                    android:id="@+id/button2"
+                    android:id="@+id/btnCancelarDatosFactura"
                     android:layout_below="@+id/editText5" android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/editText"/>
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Aceptar"
-                    android:id="@+id/button3"
-                    android:layout_alignTop="@+id/button2" android:layout_alignParentRight="true"
-                    android:layout_alignBottom="@+id/button2" android:layout_toRightOf="@+id/editText"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText6" android:layout_alignBottom="@+id/editText3"
-                    android:layout_alignParentRight="true"/>
+                    android:id="@+id/btnHacerFactura"
+                    android:layout_alignTop="@+id/btnCancelarDatosFactura" android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@+id/btnCancelarDatosFactura" android:layout_toRightOf="@+id/editText"/>
 
 
         </RelativeLayout>

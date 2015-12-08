@@ -9,10 +9,11 @@
     <string name="nombre_cliente">Nombre cliente:</string>
     <string name="direccion_cliente">Direccion cliente:</string>
     <string name="telefono_cliente">Telefono cliente</string>
-    <string name="registro_usuarios">Registro Usuario</string>
     <color name="red">#ffff0b24</color>
     <color name="gray">#cccccc</color>
     <color name="white">#ffffff</color>
+    <string name="registro_usuarios">Registro Usuario</string>
+    <string name="vista_factura">Vista Factura</string>
 
     <!-- Titles -->
     <string name="scan">Scan</string>
