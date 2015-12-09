@@ -42,14 +42,14 @@
                     android:ems="10"
                     android:id="@+id/txtFolioManual"
                     android:layout_below="@+id/textView6" android:layout_alignParentLeft="true"
-                    android:layout_alignRight="@+id/btnEscanear"/>
+                    android:layout_alignRight="@+id/textView"/>
             <Button
-                    android:layout_width="20 dp"
+                    android:layout_width="10dp"
                     android:layout_height="100dp"
                     android:text="Escanear codigo QR"
                     android:id="@+id/btnEscanear"
                     android:layout_below="@+id/textView4" android:layout_alignParentLeft="true"
-                    android:layout_marginTop="98dp" android:layout_alignParentRight="true"/>
+                    android:layout_marginTop="98dp" android:layout_alignRight="@+id/textView"/>
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
