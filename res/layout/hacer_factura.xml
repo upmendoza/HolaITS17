@@ -32,90 +32,44 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fecha_factura"
-                    android:id="@+id/textView"
-                    android:layout_marginTop="38dp"
-                    android:layout_below="@+id/textView4" android:layout_alignLeft="@+id/textView4"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no_factura"
-                    android:id="@+id/textView5"
-                    android:layout_marginTop="38dp" android:layout_below="@+id/textView"
-                    android:layout_alignParentLeft="true"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="time"
-                    android:ems="5"
-                    android:id="@+id/editText"
-                    android:layout_alignBottom="@+id/textView5" android:layout_centerHorizontal="true"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:ems="6"
-                    android:id="@+id/editText2"
-                    android:layout_above="@+id/editText" android:layout_toLeftOf="@+id/btnHacerFactura"
-                    android:layout_alignLeft="@+id/editText"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nombre_cliente"
-                    android:id="@+id/textView6" android:layout_below="@+id/btnEscanear" android:layout_alignParentLeft="true"/>
+                    android:text="@string/numero_folio"
+                    android:id="@+id/textView6" android:layout_below="@+id/btnEscanear"
+                    android:layout_alignParentLeft="true" android:layout_marginTop="65dp"
+                    android:layout_alignRight="@+id/txtFolioManual"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:id="@+id/editText3" android:layout_below="@+id/textView6"
-                    android:layout_alignParentLeft="true" android:layout_alignParentRight="true"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/direccion_cliente"
-                    android:id="@+id/textView7" android:layout_below="@+id/editText3"
-                    android:layout_alignParentLeft="true"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editText4" android:layout_below="@+id/textView7"
-                    android:layout_alignParentLeft="true" android:layout_alignRight="@+id/editText3"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/telefono_cliente"
-                    android:id="@+id/textView8" android:layout_below="@+id/editText4"
-                    android:layout_alignParentLeft="true"/>
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:ems="10"
-                    android:id="@+id/editText5" android:layout_below="@+id/textView8"
-                    android:layout_alignParentLeft="true" android:layout_alignRight="@+id/editText4"/>
+                    android:id="@+id/txtFolioManual"
+                    android:layout_below="@+id/textView6" android:layout_alignParentLeft="true"
+                    android:layout_alignRight="@+id/btnEscanear"/>
             <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="20 dp"
+                    android:layout_height="100dp"
                     android:text="Escanear codigo QR"
                     android:id="@+id/btnEscanear"
-                    android:layout_below="@+id/textView5" android:layout_alignParentLeft="true"
-                    android:layout_alignRight="@+id/editText3"/>
+                    android:layout_below="@+id/textView4" android:layout_alignParentLeft="true"
+                    android:layout_marginTop="98dp" android:layout_alignParentRight="true"/>
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cancelar"
                     android:id="@+id/btnCancelarDatosFactura"
-                    android:layout_below="@+id/editText5" android:layout_alignParentLeft="true"
-                    android:layout_toLeftOf="@+id/editText"/>
+                    android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"/>
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Aceptar"
                     android:id="@+id/btnHacerFactura"
-                    android:layout_alignTop="@+id/btnCancelarDatosFactura" android:layout_alignParentRight="true"
-                    android:layout_alignBottom="@+id/btnCancelarDatosFactura" android:layout_toRightOf="@+id/editText"/>
-
-
+                    android:layout_alignParentBottom="true" android:layout_alignRight="@+id/txtFolioManual"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/escanee_codigo_manualmente"
+                    android:id="@+id/textView" android:layout_below="@+id/textView4"
+                    android:layout_alignParentLeft="true" android:layout_marginTop="40dp"
+                    android:textAlignment="center"/>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

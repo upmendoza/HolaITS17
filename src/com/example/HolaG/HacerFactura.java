@@ -8,23 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 import la.droid.qr.Services;
 
 /**
  * Created by Juan Antonio Mtz on 25/11/2015.
  */
-public class HacerFactura extends Activity
-{
+public class HacerFactura extends Activity {
 
     private static final int ACTIVITY_RESULT_QR_DRDROID = 0;
     private EditText nombre;
     private Button aceptar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        aceptar = (Button) findViewById(R.id.btnHacerFactura);
         setContentView(R.layout.hacer_factura);
+
+        aceptar = (Button) findViewById(R.id.btnHacerFactura);
 
         //Get Spinner instance
         //final Spinner spinner = (Spinner) findViewById(R.id.spin_complete);
@@ -32,11 +32,11 @@ public class HacerFactura extends Activity
         //"Scan" button
         final Button button = (Button) findViewById(R.id.btnEscanear);
         //Set action to button
-        button.setOnClickListener( new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Create a new Intent to send to QR Droid
-                Intent qrDroid = new Intent( Services.SCAN ); //Set action "la.droid.qr.scan"
+                Intent qrDroid = new Intent(Services.SCAN); //Set action "la.droid.qr.scan"
 
                 //Check whether a complete or displayable result is needed
 //                if( spinner.getSelectedItemId()==0 ) { //First item selected ("Complete content")
@@ -52,23 +52,12 @@ public class HacerFactura extends Activity
                 }
             }
         });
-        //--------------------------------Action Listener para Realizar la factura -------------------------------------
-        aceptar.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                //Ver si podemos pasar result y hacerlo global para condicional que hay datos escaneados
-
-            }
-        });
-        //--------------------------------------------------------------------------------------------------------------
     }
+
 
     @Override
     /**
-     * Reads data scanned by user and returned by QR Droid
-     */
+     * Reads data scanned by user and returned by QR Droid*/
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -79,7 +68,7 @@ public class HacerFactura extends Activity
 //            EditText resultTxt = ( EditText ) findViewById(R.id.result);
 //            resultTxt.setText( result );
 //            resultTxt.setVisibility(View.VISIBLE);
-            nombre = (EditText)findViewById(R.id.editText3);
+            nombre = (EditText)findViewById(R.id.txtFolioManual);
             nombre.setText(data.getExtras().getString(Services.RESULT));
 
         }
@@ -90,9 +79,6 @@ public class HacerFactura extends Activity
         super.onConfigurationChanged(newConfig);
         //Nothing
     }
-    public void irVErFactura(){
-        Intent act = new Intent(this,verFactura.class);
-        startActivity(act);
-    }
+
 
 }
