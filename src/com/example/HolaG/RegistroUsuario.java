@@ -31,8 +31,6 @@ public class RegistroUsuario extends Activity {
         mail = (EditText) findViewById(R.id.txteMail); //campo de email
         cp = (EditText) findViewById(R.id.txtCodigoPostal); //campo de codigo postal
 
-
-
         registrar = (Button)findViewById(R.id.btnRegistrar);
 
         final Datos login = new Datos();
@@ -44,18 +42,23 @@ public class RegistroUsuario extends Activity {
 
 //                login.addLogin(user.getText().toString(), pass.getText().toString());
 
-                         bd.agregar(nombre.getText().toString(),
+                if( bd.agregar(nombre.getText().toString(),
                                  apellido.getText().toString(),
                                  direccion.getText().toString(),
                                  tel.getText().toString(),
                                  mail.getText().toString(),
                                  cp.getText().toString(),
                                  usuario.getText().toString(),
-                                 pass.getText().toString());
+                                 pass.getText().toString()) != -1) {
 
 
-                Toast.makeText(getApplication(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
-                irLogin();
+                           Toast.makeText(getApplication(), "Registro Exitoso ", Toast.LENGTH_SHORT).show();
+                           irLogin();
+                }
+                else {
+                           Toast.makeText(getApplication(), "Usuario Duplicado ", Toast.LENGTH_LONG).show();
+
+                       }
             }
         });
     }

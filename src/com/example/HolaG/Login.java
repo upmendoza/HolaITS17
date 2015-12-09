@@ -36,11 +36,11 @@ public class Login extends Activity
             public void onClick(View v) {
                 //validar los datos de login con la informacion que se tiene en la BD
 //                if(login.validarLogin(user.getText().toString(), pass.getText().toString()))
-                if(bd.validarLogin(user.getText().toString(),pass.getText().toString()))
-                {
+                if(bd.validarLogin(user.getText().toString(),pass.getText().toString())){
+
                     Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
-                    user.setText("");
-                    pass.setText("");
+                    //user.setText("");
+                    //pass.setText("");
                     contador = 0;
                     irFactura();
                 }
@@ -49,7 +49,7 @@ public class Login extends Activity
                     if(contador == 5)
                     {
                         contador=0;
-                        Toast.makeText(getApplication(),"Demaciados intentos ",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication(),"Demasiados intentos ",Toast.LENGTH_LONG).show();
 
                     }else {
                         Toast.makeText(getApplication(), "Datos Erroneos ", Toast.LENGTH_SHORT).show();
@@ -76,6 +76,7 @@ public class Login extends Activity
 
     public void irFactura(){
         Intent act = new Intent(this,HacerFactura.class);
+        act.putExtra("Usuario",user.getText().toString());
         startActivity(act);
     }
 

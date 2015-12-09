@@ -40,16 +40,25 @@ public class DBAdapter {
     }
     public long agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
         this.open();
-        ContentValues values = new ContentValues();
-        values.put(NOMBRE, n);
-        values.put(APELLIDO, ap);
-        values.put(DIRECCION, dir);
-        values.put(TELEFONO, tel);
-        values.put(EMAIL, email);
-        values.put(CP, cp);
-        values.put(USER, user);
-        values.put(PASS, pass);
-        return db.insert(TABLE_NAME, null, values);
+
+        Cursor miCursor = db.query(TABLE_NAME, new String[]{USER,PASS}, "usuario = ? and password = ? ",
+                new String[] {user, pass}, null, null, null);
+        miCursor.moveToFirst();
+
+        if(miCursor.getCount() == 0) {
+            ContentValues values = new ContentValues();
+            values.put(NOMBRE, n);
+            values.put(APELLIDO, ap);
+            values.put(DIRECCION, dir);
+            values.put(TELEFONO, tel);
+            values.put(EMAIL, email);
+            values.put(CP, cp);
+            values.put(USER, user);
+            values.put(PASS, pass);
+            return db.insert(TABLE_NAME, null, values);
+        }else{
+            return -1;
+        }
     }
 
     public boolean validarLogin(String user, String pass){
@@ -65,8 +74,11 @@ public class DBAdapter {
             return false;
     }
 
-    public void getDatosUsuario(){
+    public Cursor getDatosUsuario(String user){
         this.open();
+        return db.query(TABLE_NAME, new String[]{ID, NOMBRE, APELLIDO, DIRECCION, TELEFONO, EMAIL,CP,USER,PASS},
+                "usuario = ?", new String[]{user}, null, null, null);
+
 
     }
 
