@@ -65,6 +65,9 @@ public class DBAdapter {
             return false;
     }
 
+    public void getDatosUsuario(){
+        this.open();
 
+    }
 
 }
