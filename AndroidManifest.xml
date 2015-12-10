@@ -18,5 +18,7 @@
 
         <activity android:name=".RegistroUsuario"></activity>
 
+        <activity android:name=".verFactura"></activity>
+
     </application>
 </manifest> 

@@ -22,6 +22,7 @@ public class HacerFactura extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = getIntent().getExtras();
         setContentView(R.layout.hacer_factura);
 
         aceptar = (Button) findViewById(R.id.btnHacerFactura);
@@ -38,7 +39,7 @@ public class HacerFactura extends Activity {
                 //Create a new Intent to send to QR Droid
                 Intent qrDroid = new Intent(Services.SCAN); //Set action "la.droid.qr.scan"
 
-                //Check whether a complete or displayable result is needed
+//                Check whether a complete or displayable result is needed
 //                if( spinner.getSelectedItemId()==0 ) { //First item selected ("Complete content")
 //                    //Notify we want complete results (default is FALSE)
 //                    qrDroid.putExtra( Services.COMPLETE , true);
@@ -52,6 +53,14 @@ public class HacerFactura extends Activity {
                 }
             }
         });
+
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irDetalleFactura();
+            }
+
+        });
     }
 
 
@@ -64,7 +73,7 @@ public class HacerFactura extends Activity {
         if( ACTIVITY_RESULT_QR_DRDROID==requestCode && null!=data && data.getExtras()!=null ) {
             //Read result from QR Droid (it's stored in la.droid.qr.result)
             String result = data.getExtras().getString(Services.RESULT);
-            //Just set result to EditText to be able to view it
+//            Just set result to EditText to be able to view it
 //            EditText resultTxt = ( EditText ) findViewById(R.id.result);
 //            resultTxt.setText( result );
 //            resultTxt.setVisibility(View.VISIBLE);
@@ -78,6 +87,12 @@ public class HacerFactura extends Activity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         //Nothing
+    }
+
+    public void irDetalleFactura(){
+        Intent act = new Intent(this,verFactura.class);
+//        act.putExtra("Usuario",user.getText().toString());
+        startActivity(act);
     }
 
 
