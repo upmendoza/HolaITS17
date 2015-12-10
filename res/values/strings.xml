@@ -19,7 +19,7 @@
     <string name="iniciar_sesion">Iniciar Sesion</string>
     <string name="registrarse">Registrarse</string>
     <string name="Escanear_codigo">Escanear Codigo</string>
-    <string name="Canselar">Canselar</string>
+    <string name="Canselar">Cancelar</string>
     <string name="Aceptar">Aceptar</string>
     <string name="codigo_postal">Codigo postal</string>
     <string name="correo_electronico">Correo electronico</string>
