@@ -1,8 +1,6 @@
 package db;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -15,6 +13,8 @@ public class DB extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Facturalo.db";
 
     public static final String ID = "_id";
+    public static final String IDFOLIO= " idFolio";
+    public static final String FOLIO=" folio";
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
     public static final String DIRECCION = "direccion";
@@ -23,11 +23,10 @@ public class DB extends SQLiteOpenHelper {
     public static final String CP = "cp";
     public static final String USER = "usuario";
     public static final String PASS = "password";
-    public static final String TABLE_NAME = "usuarios";
-
-
-
-    public static final String USUARIOS_TABLA = "CREATE TABLE "+ TABLE_NAME  +" (" +
+    public static final String TABLE_USER = "usuarios";
+    public static final String TABLE_FOLIO ="folios";
+    public static final String FOLIOS_TABLA= "CREATE TABLE"+ TABLE_FOLIO +" ("+IDFOLIO+" integer primary key autoincrement, "+FOLIO+" text NOT NULL);";
+    public static final String USUARIOS_TABLA = "CREATE TABLE "+ TABLE_USER +" (" +
             ID + " integer primary key autoincrement," +
             NOMBRE + " text NOT NULL, " +
             APELLIDO +  " text NOT NULL, " +
@@ -41,10 +40,10 @@ public class DB extends SQLiteOpenHelper {
     public DB(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(USUARIOS_TABLA);
+        db.execSQL(FOLIOS_TABLA);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
