@@ -4,124 +4,6 @@
         android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent">
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" android:padding="30dp" android:weightSum="1">
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/vista_factura"
-                    android:id="@+id/textView4"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="35dp"
-                    android:autoText="false"
-                    android:linksClickable="false"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/textView15"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Fecha"
-                        android:id="@+id/textView9"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="fechatxt"
-                        android:id="@+id/verFecha"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="No.Factura"
-                        android:id="@+id/textView10"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="verNuFactura"
-                        android:id="@+id/verNfactura"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/textView11"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Nombre Cliente"
-                        android:id="@+id/textView12"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Medium Text"
-                        android:id="@+id/verNombreCliente"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Direccion Cliente"
-                        android:id="@+id/textView13"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Medium Text"
-                        android:id="@+id/verDireccionCliente"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Ver Telefono Cliente "
-                        android:id="@+id/textView14"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="Medium Text"
-                        android:id="@+id/verTelefonoCliente"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/textView16" android:layout_gravity="center_horizontal"/>
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:id="@+id/textView17" android:layout_gravity="center_horizontal"/>
-                <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
-                        <TextView
-                                android:layout_width="107dp"
-                                android:layout_height="wrap_content"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:id="@+id/textView18" android:text="                       "/>
-                        <Button
-                                android:layout_width="107dp"
-                                android:layout_height="wrap_content"
-                                android:text="Cancelar"
-                                android:id="@+id/button"/>
-                        <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Aceptar"
-                                android:id="@+id/button4"/>
-                </LinearLayout>
-
-        </LinearLayout>
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -129,5 +11,121 @@
             android:layout_alignParentTop="true">
 
 
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" android:padding="30dp" android:weightSum="1">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="@string/vista_factura"
+                            android:id="@+id/textView4"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="35dp"
+                            android:autoText="false"
+                            android:linksClickable="false"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:id="@+id/textView15"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="@string/fecha_factura"
+                                android:id="@+id/textView9"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="fechatxt"
+                                android:id="@+id/verFecha"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="@string/no_factura"
+                                android:id="@+id/textView10"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="verNuFactura"
+                                android:id="@+id/verNfactura"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:id="@+id/textView11"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="@string/nombre_cliente"
+                                android:id="@+id/textView12"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Medium Text"
+                                android:id="@+id/verNombreCliente"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="@string/direccion_cliente"
+                                android:id="@+id/textView13"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Medium Text"
+                                android:id="@+id/verDireccionCliente"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:text="@string/telefono_cliente"
+                                android:id="@+id/textView14"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:text="Medium Text"
+                                android:id="@+id/verTelefonoCliente"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:id="@+id/textView16" android:layout_gravity="center_horizontal"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:id="@+id/textView17" android:layout_gravity="center_horizontal"/>
+                        <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent">
+                                <Button
+                                        android:layout_width="107dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/Canselar"
+                                        android:id="@+id/cancelarFacturaVista"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_toLeftOf="@+id/AceptarFacturaVista"
+                                        android:layout_marginRight="43dp"/>
+                                <Button
+                                        android:layout_width="104dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/Aceptar"
+                                        android:id="@+id/AceptarFacturaVista" android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"/>
+                        </RelativeLayout>
+
+                </LinearLayout>
         </ScrollView>
 </LinearLayout>

@@ -32,35 +32,35 @@
 				     android:layout_height="fill_parent"
 				     android:inputType="textPersonName"
 				     android:ems="10"
-				     android:id="@+id/txtNombre" android:hint="Nombre"/>
+				     android:id="@+id/txtNombre" android:hint="@string/nombre_cliente"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
 				     android:inputType="textPersonName"
 				     android:ems="10"
-				     android:id="@+id/txtApellido" android:singleLine="false" android:hint="Apellido"/>
+				     android:id="@+id/txtApellido" android:singleLine="false" android:hint="@string/apellido_cliente"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
-				     android:id="@+id/txtDireccion" android:hint="Direccion"/>
+				     android:id="@+id/txtDireccion" android:hint="@string/direccion_cliente"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
 				     android:inputType="phone"
 				     android:ems="10"
-				     android:id="@+id/txtTelefono" android:hint="Telefono/Cel"/>
+				     android:id="@+id/txtTelefono" android:hint="@string/telefono_cliente"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
 				     android:inputType="textEmailAddress"
 				     android:ems="10"
-				     android:id="@+id/txteMail" android:hint="Email"/>
+				     android:id="@+id/txteMail" android:hint="@string/correo_electronico"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
 				     android:inputType="textPostalAddress"
 				     android:ems="10"
-				     android:id="@+id/txtCodigoPostal" android:hint="Codigo postal"/>
+				     android:id="@+id/txtCodigoPostal" android:hint="@string/codigo_postal"/>
 		   <Spinner
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
@@ -70,17 +70,17 @@
 				     android:layout_height="fill_parent"
 				     android:inputType="textPersonName"
 				     android:ems="10"
-				     android:id="@+id/txtUsuario" android:hint="Nombre Usuario"/>
+				     android:id="@+id/txtUsuario" android:hint="@string/login_usr"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
 				     android:inputType="textPassword"
 				     android:ems="10"
-				     android:id="@+id/txtPassword" android:hint="Contraseña"/>
+				     android:id="@+id/txtPassword" android:hint="@string/login_pass"/>
 		   <Button
 				     android:layout_width="fill_parent"
 				     android:layout_height="wrap_content"
-				     android:text="Registrar"
+				     android:text="@string/registrarse"
 				     android:id="@+id/btnRegistrar"
 				     android:layout_gravity="center_horizontal"
 				     android:layout_marginTop="51dp"

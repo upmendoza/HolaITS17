@@ -45,7 +45,7 @@
 				android:inputType="textPersonName"
 				android:ems="10"
 				android:id="@+id/txtUsuario"
-				android:hint="Nombre de Usuario"
+				android:hint="@string/login_usr"
 				android:layout_below="@+id/textView2"
 				android:layout_alignParentLeft="true"/>
 	<TextView
@@ -62,13 +62,13 @@
 				android:inputType="textPassword"
 				android:ems="10"
 				android:id="@+id/etPass"
-				android:hint="Contraseña"
+				android:hint="@string/login_pass"
 				android:layout_below="@+id/textView3"
 				android:layout_alignParentLeft="true"/>
 	<Button
 				android:layout_width="fill_parent"
 				android:layout_height="wrap_content"
-				android:text="Iniciar sesion"
+				android:text="@string/iniciar_sesion"
 				android:id="@+id/btIniciar"
 				android:layout_gravity="center_horizontal"
 				android:layout_marginTop="51dp"
@@ -78,7 +78,7 @@
 			  style="?android:attr/buttonStyleSmall"
 			  android:layout_width="wrap_content"
 			  android:layout_height="wrap_content"
-			  android:text="Registrar"
+			  android:text="@string/registrarse"
 			  android:id="@+id/btRegistrar"
 			  android:layout_gravity="bottom"
 			  android:paddingRight="10dp"
