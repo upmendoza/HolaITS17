@@ -16,7 +16,7 @@ import la.droid.qr.Services;
 public class HacerFactura extends Activity {
 
     private static final int ACTIVITY_RESULT_QR_DRDROID = 0;
-    private EditText nombre;
+    private EditText nombre, folio;
     private Button aceptar;
 
     @Override
@@ -26,6 +26,7 @@ public class HacerFactura extends Activity {
         setContentView(R.layout.hacer_factura);
 
         aceptar = (Button) findViewById(R.id.btnHacerFactura);
+        folio = (EditText) findViewById(R.id.txtFolioManual);
 
         //Get Spinner instance
         //final Spinner spinner = (Spinner) findViewById(R.id.spin_complete);
@@ -91,7 +92,7 @@ public class HacerFactura extends Activity {
 
     public void irDetalleFactura(){
         Intent act = new Intent(this,verFactura.class);
-//        act.putExtra("Usuario",user.getText().toString());
+        act.putExtra("Folio",folio.getText().toString());
         startActivity(act);
     }
 
