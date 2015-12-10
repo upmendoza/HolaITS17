@@ -7,9 +7,9 @@
 
    <ImageView
            android:layout_width="326dp"
-           android:layout_height="131dp"
+           android:layout_height="331dp"
            android:id="@+id/imageView"
-           android:src="@drawable/logo"
+           android:src="@drawable/logo2"
            android:layout_alignParentTop="false"
            android:layout_marginTop="116dp" android:scaleType="fitXY" android:layout_centerInParent="true"/>
 </RelativeLayout>
