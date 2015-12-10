@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import la.droid.qr.Services;
 
 /**
@@ -59,7 +60,11 @@ public class HacerFactura extends Activity {
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                irDetalleFactura();
+                Datos factura = new Datos();
+                if(factura.validaFolio(folio.getText().toString()))
+                    irDetalleFactura();
+                else
+                    Toast.makeText(getApplicationContext(),"Folio no válido",Toast.LENGTH_LONG).show();
             }
 
         });
