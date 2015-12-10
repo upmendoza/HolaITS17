@@ -18,13 +18,14 @@ public class HacerFactura extends Activity {
     private static final int ACTIVITY_RESULT_QR_DRDROID = 0;
     private EditText nombre, folio;
     private Button aceptar;
+    private String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         setContentView(R.layout.hacer_factura);
-
+        usuario = bundle.getString("Usuario");
         aceptar = (Button) findViewById(R.id.btnHacerFactura);
         folio = (EditText) findViewById(R.id.txtFolioManual);
 
@@ -93,6 +94,7 @@ public class HacerFactura extends Activity {
     public void irDetalleFactura(){
         Intent act = new Intent(this,verFactura.class);
         act.putExtra("Folio",folio.getText().toString());
+        act.putExtra("Usuario",usuario);
         startActivity(act);
     }
 

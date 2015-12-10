@@ -1,9 +1,11 @@
 package com.example.HolaG;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
+import db.DBAdapter;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -15,16 +17,30 @@ public class verFactura extends Activity
 {
     private TextView folio;
     private TextView fecha;
+    private TextView nombre;
+    private TextView direccion;
+    private TextView telefono;
+    Cursor cursor;
+    DBAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         setContentView(R.layout.mostrar_factura);
+
         Calendar calendario = new GregorianCalendar();
+
+        adapter = new DBAdapter(this);
+        cursor = adapter.getDatosUsuario(bundle.getString("Usuario"));
+        cursor.moveToFirst();
 
         folio = (TextView)findViewById(R.id.verNfactura);
         fecha = (TextView)findViewById(R.id.verFecha);
+        nombre = (TextView)findViewById(R.id.verNombreCliente);
+        direccion = (TextView)findViewById(R.id.verDireccionCliente);
+        telefono = (TextView)findViewById(R.id.verTelefonoCliente);
+
         String YEAR = ""+calendario.get(Calendar.YEAR);
         String MONTH = ""+(calendario.get(Calendar.MONTH)+1);
         String DAY = ""+calendario.get(Calendar.DAY_OF_MONTH);
@@ -32,6 +48,12 @@ public class verFactura extends Activity
         fecha.setText(DAY + "-" + MONTH +"-" + YEAR);
 //        fecha.setText(calendario.toString());
         folio.setText(bundle.getString("Folio"));
+
+        nombre.setText(cursor.getString(1) + " " + cursor.getString(2));
+
+        direccion.setText(cursor.getString(3));
+
+        telefono.setText(cursor.getString(4));
 
 
     }
