@@ -42,7 +42,7 @@
                     android:ems="10"
                     android:id="@+id/txtFolioManual"
                     android:layout_below="@+id/textView6" android:layout_alignParentLeft="true"
-                    android:layout_alignRight="@+id/textView"/>
+                    android:layout_alignRight="@+id/textView" android:inputType="number"/>
             <Button
                     android:layout_width="10dp"
                     android:layout_height="100dp"
