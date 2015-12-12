@@ -63,6 +63,7 @@ public class Login extends Activity
             @Override
             public void onClick(View v) {
                 irRegistro();
+               // WebService ws = new WebService();
             }
 
         });
