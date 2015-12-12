@@ -12,7 +12,7 @@ import db.DBAdapter;
 /**
  * Created by Jorge on 25/11/15.
  */
-public class RegistroUsuario extends Activity {
+public class RegistroUsuario2 extends Activity {
 
     private Button registrar;
     private EditText usuario,pass,nombre,apellido,direccion,tel,mail,cp;
@@ -21,8 +21,8 @@ public class RegistroUsuario extends Activity {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registro_usuario);
-        usuario = (EditText) findViewById(R.id.txtUsuario); //campo de usuario
+        setContentView(R.layout.registro_usuario2);
+        usuario = (EditText) findViewById(R.id.txtRfc); //campo de usuario
         pass = (EditText) findViewById(R.id.txtPassword); //campo de password
         nombre = (EditText) findViewById(R.id.txtNombre); //campo de nombre
         apellido = (EditText) findViewById(R.id.txtApellido); //campo de apellido

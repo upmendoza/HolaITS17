@@ -21,7 +21,9 @@
 
         <activity android:name=".HacerFactura"></activity>
 
-        <activity android:name=".RegistroUsuario"></activity>
+        <activity android:name=".RegistroUsuario1"></activity>
+
+        <activity android:name=".RegistroUsuario2"></activity>
 
         <activity android:name=".verFactura"></activity>
 

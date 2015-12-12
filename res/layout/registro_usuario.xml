@@ -32,56 +32,24 @@
 				     android:layout_height="fill_parent"
 				     android:inputType="textPersonName"
 				     android:ems="10"
-				     android:id="@+id/txtNombre" android:hint="@string/nombre_cliente"/>
-		   <EditText
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:inputType="textPersonName"
-				     android:ems="10"
-				     android:id="@+id/txtApellido" android:singleLine="false" android:hint="@string/apellido_cliente"/>
-		   <EditText
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:id="@+id/txtDireccion" android:hint="@string/direccion_cliente"/>
-		   <EditText
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:inputType="phone"
-				     android:ems="10"
-				     android:id="@+id/txtTelefono" android:hint="@string/telefono_cliente"/>
-		   <EditText
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:inputType="textEmailAddress"
-				     android:ems="10"
-				     android:id="@+id/txteMail" android:hint="@string/correo_electronico"/>
-		   <EditText
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:inputType="textPostalAddress"
-				     android:ems="10"
-				     android:id="@+id/txtCodigoPostal" android:hint="@string/codigo_postal"/>
-		   <Spinner
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:id="@+id/spinner"/>
-		   <EditText
-				     android:layout_width="fill_parent"
-				     android:layout_height="fill_parent"
-				     android:inputType="textPersonName"
-				     android:ems="10"
-				     android:id="@+id/txtUsuario" android:hint="@string/login_usr"/>
+				     android:id="@+id/txtRfc" android:hint="@string/rfc"/>
 		   <EditText
 				     android:layout_width="fill_parent"
 				     android:layout_height="fill_parent"
 				     android:inputType="textPassword"
 				     android:ems="10"
 				     android:id="@+id/txtPassword" android:hint="@string/login_pass"/>
+		   <EditText
+				   android:layout_width="323dp"
+				   android:layout_height="wrap_content"
+				   android:inputType="textPassword"
+				   android:ems="10"
+				   android:id="@+id/etRPass" android:hint="@string/repetir_pass"/>
 		   <Button
 				     android:layout_width="fill_parent"
 				     android:layout_height="wrap_content"
-				     android:text="@string/registrarse"
-				     android:id="@+id/btnRegistrar"
+				     android:text="@string/continuar"
+				     android:id="@+id/btnContinuar"
 				     android:layout_gravity="center_horizontal"
 				     android:layout_marginTop="51dp"
 				     android:layout_below="@+id/etPass"

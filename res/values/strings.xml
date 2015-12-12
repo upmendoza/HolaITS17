@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Factúralo</string>
-    <string name="login_usr">Usuario:</string>
+    <string name="login_usr">RFC:</string>
     <string name="login_pass">Contraseña:</string>
+    <string name="repetir_pass">Repetir Contraseña:</string>
     <string name="fecha_factura">Fecha:</string>
     <string name="hacer_factura">Datos de factura</string>
     <string name="no_factura">No. Factura:</string>
     <string name="nombre_cliente">Nombre cliente:</string>
     <string name="direccion_cliente">Direccion cliente:</string>
-    <string name="telefono_cliente">Telefono cliente</string>
-    <string name="numero_folio">Folio</string>
+    <string name="telefono_cliente">Telefono cliente:</string>
+    <string name="numero_folio">Folio:</string>
     <color name="red">#ffff0b24</color>
     <color name="gray">#cccccc</color>
     <color name="white">#ffffff</color>
@@ -21,9 +22,11 @@
     <string name="Escanear_codigo">Escanear Codigo</string>
     <string name="Canselar">Cancelar</string>
     <string name="Aceptar">Aceptar</string>
-    <string name="codigo_postal">Codigo postal</string>
-    <string name="correo_electronico">Correo electronico</string>
-    <string name="apellido_cliente">Apellido Cliente</string>
+    <string name="codigo_postal">Codigo postal:</string>
+    <string name="correo_electronico">Correo electronico:</string>
+    <string name="apellido_cliente">Apellido Cliente:</string>
+    <string name="rfc">RFC:</string>
+    <string name="continuar">Continuar</string>
 
     <!-- Titles -->
     <string name="scan">Scan</string>

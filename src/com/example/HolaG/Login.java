@@ -22,7 +22,7 @@ public class Login extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        user = (EditText) findViewById(R.id.txtUsuario); //campo de usuario
+        user = (EditText) findViewById(R.id.txtRfc); //campo de usuario
         pass = (EditText) findViewById(R.id.etPass); //campo de password
 
         registrar = (Button)findViewById(R.id.btRegistrar);
@@ -71,7 +71,7 @@ public class Login extends Activity
     }
     public void irRegistro()
     {
-        Intent Act=new Intent(this,RegistroUsuario.class);
+        Intent Act=new Intent(this,RegistroUsuario1.class);
         startActivity(Act);
     }
 

@@ -13,8 +13,8 @@ public class DB extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "Facturalo.db";
 
     public static final String ID = "_id";
-    public static final String IDFOLIO= " idFolio";
-    public static final String FOLIO=" folio";
+    public static final String IDFOLIO= "_id";
+    public static final String FOLIO="folio";
     public static final String NOMBRE = "nombre";
     public static final String APELLIDO = "apellido";
     public static final String DIRECCION = "direccion";
@@ -43,7 +43,7 @@ public class DB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(USUARIOS_TABLA);
-        db.execSQL(FOLIOS_TABLA);
+        //db.execSQL(FOLIOS_TABLA);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

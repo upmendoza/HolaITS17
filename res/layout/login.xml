@@ -44,7 +44,7 @@
 				android:layout_height="wrap_content"
 				android:inputType="textPersonName"
 				android:ems="10"
-				android:id="@+id/txtUsuario"
+				android:id="@+id/txtRfc"
 				android:hint="@string/login_usr"
 				android:layout_below="@+id/textView2"
 				android:layout_alignParentLeft="true"/>
@@ -54,7 +54,7 @@
 				android:textAppearance="?android:attr/textAppearanceMedium"
 				android:text="@string/login_pass"
 				android:id="@+id/textView3"
-				android:layout_below="@+id/txtUsuario"
+				android:layout_below="@+id/txtRfc"
 				android:layout_alignParentLeft="true"/>
 	<EditText
 				android:layout_width="match_parent"
@@ -75,8 +75,7 @@
 				android:layout_below="@+id/etPass"
 				android:layout_alignParentRight="true"/>
 	<Button
-			  style="?android:attr/buttonStyleSmall"
-			  android:layout_width="wrap_content"
+				android:layout_width="wrap_content"
 			  android:layout_height="wrap_content"
 			  android:text="@string/registrarse"
 			  android:id="@+id/btRegistrar"
