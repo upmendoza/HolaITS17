@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent">
+   <ScrollView
+           android:layout_width="fill_parent"
+           android:layout_height="fill_parent"
+           android:id="@+id/scrollView"
+           android:layout_alignParentTop="true">
+
+	   <LinearLayout
+			     android:orientation="vertical"
+			     android:layout_width="fill_parent"
+			     android:layout_height="fill_parent"
+			     android:padding="30dp">
+		   <TextView
+				     android:layout_width="wrap_content"
+				     android:layout_height="wrap_content"
+				     android:textAppearance="?android:attr/textAppearanceLarge"
+				     android:text="@string/registro_usuarios"
+				     android:id="@+id/textView4"
+				     android:layout_gravity="center_horizontal"
+				     android:textSize="35dp"
+				     android:autoText="false"
+				     android:linksClickable="false"
+				     android:layout_alignParentTop="true"
+				     android:layout_centerHorizontal="true"/>
+		   EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="textPersonName"
+				     android:ems="10"
+				     android:id="@+id/txtRfc" android:hint="@string/login_usr"/>
+		   <EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="textPersonName"
+				     android:ems="10"
+				     android:id="@+id/txtNombre" android:hint="@string/nombre_cliente"/>
+		   <EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="textPersonName"
+				     android:ems="10"
+				     android:id="@+id/txtApellido" android:singleLine="false" android:hint="@string/apellido_cliente"/>
+		   <EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:id="@+id/txtDireccion" android:hint="@string/direccion_cliente"/>
+		   <EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="phone"
+				     android:ems="10"
+				     android:id="@+id/txtTelefono" android:hint="@string/telefono_cliente"/>
+		   <EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="textEmailAddress"
+				     android:ems="10"
+				     android:id="@+id/txteMail" android:hint="@string/correo_electronico"/>
+		   <EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="textPostalAddress"
+				     android:ems="10"
+				     android:id="@+id/txtCodigoPostal" android:hint="@string/codigo_postal"/>
+		   EditText
+				     android:layout_width="fill_parent"
+				     android:layout_height="fill_parent"
+				     android:inputType="textPassword"
+				     android:ems="10"
+				     android:id="@+id/txtPassword" android:hint="@string/login_pass"/>
+		   <Button
+				     android:layout_width="fill_parent"
+				     android:layout_height="wrap_content"
+				     android:text="@string/registrarse"
+				     android:id="@+id/btnRegistrar"
+				     android:layout_gravity="center_horizontal"
+				     android:layout_marginTop="51dp"
+				     android:layout_below="@+id/etPass"
+				     android:layout_alignParentRight="true"/>
+	   </LinearLayout>
+   </ScrollView>
+</LinearLayout>
