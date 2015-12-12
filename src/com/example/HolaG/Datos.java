@@ -33,8 +33,10 @@ public class Datos {
     }
 
     public boolean validarLogin(String user, String password){
-        if(this.user.contains(user) && this.password.contains(password))
+        if(this.user.contains(user) && this.password.contains(password)) {
+            folios.clear();
             return true;
+        }
         else
             return false;
     }
