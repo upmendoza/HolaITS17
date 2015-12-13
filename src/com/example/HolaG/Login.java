@@ -36,25 +36,39 @@ public class Login extends Activity
             public void onClick(View v) {
                 //validar los datos de login con la informacion que se tiene en la BD
 //                if(login.validarLogin(user.getText().toString(), pass.getText().toString()))
-                if(bd.validarLogin(user.getText().toString(),pass.getText().toString())){
+//                if(bd.validarLogin(user.getText().toString(),pass.getText().toString())){
+//                if(true){
 
-                    Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
                     //user.setText("");
-                    //pass.setText("");
+                //pass.setText("");
+
+                if(bd.validarLogin(user.getText().toString(), pass.getText().toString())){
+                    Toast.makeText(getApplication(),"Login Correcto",Toast.LENGTH_SHORT).show();
                     contador = 0;
+                    System.out.println("Hice Login AUQI 49");
                     irFactura();
                 }
-                else{
-                    contador ++;
-                    if(contador == 5)
-                    {
-                        contador=0;
-                        Toast.makeText(getApplication(),"Demasiados intentos ",Toast.LENGTH_LONG).show();
+                else {
+                    HttpHandler httpHandler = new HttpHandler();
+                    final String[] respuesta = httpHandler.Login(user.getText().toString(), pass.getText().toString());
+                    if (respuesta[0].equals("1")) {
+                        bd.agregar(respuesta[1],respuesta[2],respuesta[3],respuesta[4],respuesta[5],respuesta[6],respuesta[7],respuesta[8]);
+                        Toast.makeText(getApplication(), "Login Correcto", Toast.LENGTH_SHORT).show();
+                        contador = 0;
+                        irFactura();
+                    }
+                    else {
+                        contador++;
+                        if (contador == 5) {
+                            contador = 0;
+                            Toast.makeText(getApplication(), "Demasiados intentos ", Toast.LENGTH_LONG).show();
 
-                    }else {
-                        Toast.makeText(getApplication(), "Datos Erroneos ", Toast.LENGTH_SHORT).show();
-                        user.setText("");
-                        pass.setText("");
+                        } else {
+                            Toast.makeText(getApplication(), "Datos Erroneos ", Toast.LENGTH_SHORT).show();
+                            user.setText("");
+                            pass.setText("");
+                        }
                     }
                 }
             }
@@ -63,7 +77,6 @@ public class Login extends Activity
             @Override
             public void onClick(View v) {
                 irRegistro();
-               // WebService ws = new WebService();
             }
 
         });

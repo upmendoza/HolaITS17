@@ -43,19 +43,41 @@ public class RegistroUsuario2 extends Activity {
             public void onClick(View v) {
 
 //                login.addLogin(user.getText().toString(), pass.getText().toString());
+                HttpHandler httpHandler = new HttpHandler();
 
-                if( bd.agregar(nombre.getText().toString(),
+            final String resp  = httpHandler.Resgistro(
+                    nombre.getText().toString(),
+                    apellido.getText().toString(),
+                    direccion.getText().toString(),
+                    tel.getText().toString(),
+                    mail.getText().toString(),
+                    cp.getText().toString(),
+                    bundle.getString("rfc"),
+                    pass
+                );
+
+
+//                if( bd.agregar(nombre.getText().toString(),
+//                                 apellido.getText().toString(),
+//                                 direccion.getText().toString(),
+//                                 tel.getText().toString(),
+//                                 mail.getText().toString(),
+//                                 cp.getText().toString(),
+//                                 bundle.getString("rfc"),
+//                                 pass) != -1) {
+                if(resp.equals("1")){
+
+                           Toast.makeText(getApplication(), "Registro Exitoso ", Toast.LENGTH_SHORT).show();
+
+                    if( bd.agregar(nombre.getText().toString(),
                                  apellido.getText().toString(),
                                  direccion.getText().toString(),
                                  tel.getText().toString(),
                                  mail.getText().toString(),
                                  cp.getText().toString(),
                                  bundle.getString("rfc"),
-                                 pass) != -1) {
-
-
-                           Toast.makeText(getApplication(), "Registro Exitoso ", Toast.LENGTH_SHORT).show();
-                           irLogin();
+                                 pass) != -1)
+                                irLogin();
                 }
                 else {
                            Toast.makeText(getApplication(), "Usuario Duplicado ", Toast.LENGTH_LONG).show();

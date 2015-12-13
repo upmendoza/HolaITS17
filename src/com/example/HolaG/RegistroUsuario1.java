@@ -53,21 +53,30 @@ public class RegistroUsuario1 extends Activity {
                 } else {
                     Toast.makeText(getApplication(), "Usuario Duplicado ", Toast.LENGTH_LONG).show();
                 }*/
+
                 if(pass.getText().toString().equals(Rpass.getText().toString()))
                 {
                     if(bd.validarLogin2(rfc.getText().toString()))
                     {
                         regresarLogin();
-                        Toast.makeText(getApplication(),"Usuario ya esta registrado ",Toast.LENGTH_LONG).show();
                     }
                     else
                     {
-                        irRegistroUsuarios2();
+                        HttpHandler httpHandler = new HttpHandler();
+                        final String[] resp = httpHandler.Login(rfc.getText().toString(),pass.getText().toString());
+
+                        if(resp[0].equals("1"))
+
+                        {
+                            Toast.makeText(getApplication(),"Usuario ya esta registrado ",Toast.LENGTH_LONG).show();
+                        }
+                        else
+                            irRegistroUsuarios2();
                     }
                 }
                 else
                 {
-                    Toast.makeText(getApplication(),"Las contraseñas no coinsiden ",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(),"Las contraseÃ±as no coinciden ",Toast.LENGTH_LONG).show();
                 }
 
             }

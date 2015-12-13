@@ -75,8 +75,7 @@ public class DBAdapter {
     public boolean validarLogin2(String rfc)
     {
         this.open();
-        Cursor MiCursor = db.query(TABLE_NAME, new String[]{RFC}, "rfc = ?",
-                new String[]{rfc}, null, null, null);
+        Cursor MiCursor = db.query(TABLE_NAME, new String[]{RFC}, "rfc = ?", new String[]{rfc}, null, null, null);
         if(MiCursor != null)
             if (MiCursor.getCount() > 0)
                 return true;

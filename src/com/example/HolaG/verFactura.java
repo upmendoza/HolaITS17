@@ -3,8 +3,11 @@ package com.example.HolaG;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import db.DBAdapter;
 
 import java.util.Calendar;
@@ -20,6 +23,7 @@ public class verFactura extends Activity
     private TextView nombre;
     private TextView direccion;
     private TextView telefono;
+    private Button aceptar;
     Cursor cursor;
     DBAdapter adapter;
 
@@ -27,6 +31,7 @@ public class verFactura extends Activity
     {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
+
         setContentView(R.layout.mostrar_factura);
 
         Calendar calendario = new GregorianCalendar();
@@ -40,6 +45,7 @@ public class verFactura extends Activity
         nombre = (TextView)findViewById(R.id.verNombreCliente);
         direccion = (TextView)findViewById(R.id.verDireccionCliente);
         telefono = (TextView)findViewById(R.id.verTelefonoCliente);
+        aceptar = (Button)findViewById(R.id.AceptarFacturaVista);
 
         String YEAR = ""+calendario.get(Calendar.YEAR);
         String MONTH = ""+(calendario.get(Calendar.MONTH)+1);
@@ -55,6 +61,20 @@ public class verFactura extends Activity
 
         telefono.setText(cursor.getString(4));
 
+        aceptar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpHandler httpHandler = new HttpHandler();
+              final String resp =  httpHandler.Factura(folio.getText().toString());
 
+                if(resp.equals("1")){
+                    Toast.makeText(getApplicationContext(),"Factura Correcta",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Folio no Valido",Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
     }
 }

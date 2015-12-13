@@ -15,41 +15,82 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
-
 public class WebService {
 
-    private String ipServer = "192.168.1.5";
-    private String destino;
+    //    private String url;
+    private String serverURL = "";
+    private String rfc, pass;
+    private int tipo_metodo;
+    private static int exito=2;
 
-    public WebService() {
-
-        // WebServer Request URL
-        String serverURL = "http://"+ ipServer +"/webservice/JsonReturn.php";
-
-
-        // Use AsyncTask execute Method To Prevent ANR Problem
-        new LongOperation().execute(serverURL);
+    public static int getExito() {
+        return exito;
     }
 
-    private class LongOperation extends AsyncTask<String, Void, Void> {
+    public static void setExito(int exito) {
+        WebService.exito = exito;
+    }
+
+    public WebService() {
+//        this.url = url;
+
+        // WebServer Request URL
+        serverURL = "http://192.168.1.67/webservice/JsonReturn.php";
+    }
+
+    public WebService(String rfc, String pass) {
+        serverURL = "http://192.168.1.67/webservice/JsonReturn.php";
+        this.rfc = rfc;
+        this.pass = pass;
+        this.tipo_metodo = 1;
+
+    }
+
+    public boolean ejecutarWS() {
+
+
+//        new LongOperation().execute(serverURL);
+        if(new LongOperation().execute(serverURL).getStatus() == AsyncTask.Status.FINISHED)
+
+        System.out.println("GET EXITO -> " + getExito());
+
+
+//        System.out.println("TERMINO EL METODO ejecutarWS");
+
+
+
+        if(getExito() == 1)
+            return true;
+        else
+            return false;
+        // Use AsyncTask execute Method To Prevent ANR Problem
+    }
+
+    public  class LongOperation extends AsyncTask<String, Void, Void> {
 
         // Required initialization
-
         private final HttpClient Client = new DefaultHttpClient();
         private String Content;
         private String Error = null;
 
-        String data = "";
+        //        private ProgressDialog Dialog = new ProgressDialog(RestFulWebservice.this);
 
-        int sizeData = 0;
+        String data_rfc = "";
+        String data_pass = "";
 
 
         protected void onPreExecute() {
+            // NOTE: You can call UI Element here.
 
             try {
                 // Set Request parameter
-                data += "&" + URLEncoder.encode("data", "UTF-8") + "=1"; //+ serverText.getText();
-                System.out.println(data);
+                if (tipo_metodo == 1) {
+                    data_rfc += "&" + URLEncoder.encode("rfc", "UTF-8") + "=" + rfc; //+ serverText.getText();
+                    data_pass += "&" + URLEncoder.encode("pass", "UTF-8") + "=" + pass; //+ serverText.getText();
+                }
+//                data += "&" + URLEncoder.encode("data", "UTF-8") + "=1"; //+ serverText.getText();
+                System.out.println(data_rfc);
+                System.out.println(data_pass);
             } catch (UnsupportedEncodingException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -75,7 +116,11 @@ public class WebService {
                 conn.setDoOutput(true);
                 OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
 //                wr.write( "&data=PETER" );
-                wr.write(data);
+                if (tipo_metodo == 1) {
+                    wr.write(data_rfc);
+                    wr.write(data_pass);
+                }
+
                 wr.flush();
 
                 // Get the server response
@@ -107,7 +152,19 @@ public class WebService {
         }
 
         protected void onPostExecute(Void unused) {
+            // NOTE: You can call UI Element here.
 
+            // Close progress dialog
+//            Dialog.dismiss();
+
+//            if (Error != null) {
+//
+//                uiUpdate.setText("Output : " + Error);
+//
+//            } else {
+//
+//                // Show Response Json On Screen (activity)
+//                uiUpdate.setText(Content);
 
             /****************** Start Parse Response JSON Data *************/
 
@@ -133,41 +190,56 @@ public class WebService {
 
                     /******* Fetch node values **********/
 
-//                    for(String dato : jsonChildNode){
-//                        System.out.println(dato);
-//                    }
+                    String resultado = jsonChildNode.optString("resultado").toString();
 
-                    String nombre = jsonChildNode.optString("nombre").toString();
-                    String apellido = jsonChildNode.optString("apellido").toString();
-                    String direccion = jsonChildNode.optString("direccion").toString();
-                    String telefono = jsonChildNode.optString("telefono").toString();
-                    String email = jsonChildNode.optString("email").toString();
-                    String codigo_postal = jsonChildNode.optString("codigo_postal").toString();
-                    String usuario = jsonChildNode.optString("usuario").toString();
-                    String password = jsonChildNode.optString("password").toString();
+                    if (tipo_metodo == 1 && resultado.equals("1")) {
+
+                        WebService.exito = 1;
+                        WebService.setExito(1);
+                        exito = 1;
 
 
-                    OutputData += "\tnombre -> " + nombre + "\n" +
-                            "\tapellido -> " + apellido + "\n" +
-                            "\tdireccion -> " + direccion + "\n" +
-                            "\ttelefono -> " + telefono + "\n" +
-                            "\temail -> " + email + "\n" +
-                            "\tcodigo_postal -> " + codigo_postal + "\n" +
-                            "\tusuario -> " + usuario + "\n" +
-                            "\tpassword -> " + password;
+                        String nombre = jsonChildNode.optString("nombre").toString();
+                        String apellido = jsonChildNode.optString("apellido").toString();
+                        String direccion = jsonChildNode.optString("direccion").toString();
+                        String telefono = jsonChildNode.optString("telefono").toString();
+                        String email = jsonChildNode.optString("email").toString();
+                        String codigo_postal = jsonChildNode.optString("codigo_postal").toString();
+                        String rfc = jsonChildNode.optString("rfc").toString();
+                        String password = jsonChildNode.optString("password").toString();
 
+
+                        OutputData += "\tnombre -> " + nombre + "\n" +
+                                "\tapellido -> " + apellido + "\n" +
+                                "\tdireccion -> " + direccion + "\n" +
+                                "\ttelefono -> " + telefono + "\n" +
+                                "\temail -> " + email + "\n" +
+                                "\tcodigo_postal -> " + codigo_postal + "\n" +
+                                "\trfc -> " + rfc + "\n" +
+                                "\tpassword -> " + password + "\n" + "resultado -> " + resultado;
+                        setExito(Integer.parseInt(resultado));
+                        //ban=true;
+                    }
+
+                    if(tipo_metodo == 2){}
+
+                    if(tipo_metodo == 3){}
 
                 }
                 /****************** End Parse Response JSON Data *************/
 
                 //Show Parsed Output on screen (activity)
 //                    jsonParsed.setText(OutputData);
-//                System.out.println(OutputData);
+                System.out.println(OutputData + "\n exito -> "+ exito);
 
             } catch (JSONException e) {
 
                 e.printStackTrace();
+                //exito = 0;
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
             }
+
         }
     }
 }

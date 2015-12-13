@@ -61,10 +61,10 @@ public class HacerFactura extends Activity {
             @Override
             public void onClick(View v) {
                 Datos factura = new Datos();
-                if(factura.validaFolio(folio.getText().toString()))
+//                if(factura.validaFolio(folio.getText().toString()))
                     irDetalleFactura();
-                else
-                    Toast.makeText(getApplicationContext(),"Folio no válido",Toast.LENGTH_LONG).show();
+//                else
+//                    Toast.makeText(getApplicationContext(),"Folio no válido",Toast.LENGTH_LONG).show();
             }
 
         });
@@ -86,6 +86,7 @@ public class HacerFactura extends Activity {
 //            resultTxt.setVisibility(View.VISIBLE);
             nombre = (EditText)findViewById(R.id.txtFolioManual);
             nombre.setText(data.getExtras().getString(Services.RESULT));
+            irDetalleFactura();
 
         }
     }
