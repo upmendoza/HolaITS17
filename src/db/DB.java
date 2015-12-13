@@ -21,7 +21,7 @@ public class DB extends SQLiteOpenHelper {
     public static final String TELEFONO = "telefono";
     public static final String EMAIL = "email";
     public static final String CP = "cp";
-    public static final String USER = "usuario";
+    public static final String RFC = "rfc";
     public static final String PASS = "password";
     public static final String TABLE_USER = "usuarios";
     public static final String TABLE_FOLIO ="folios";
@@ -34,7 +34,7 @@ public class DB extends SQLiteOpenHelper {
             TELEFONO + " text NOT NULL, " +
             EMAIL + " text NOT NULL, " +
             CP + " text NOT NULL, " +
-            USER + " text NOT NULL, " +
+            RFC + " text NOT NULL, " +
             PASS + " password text NOT NULL);";
 
     public DB(Context context) {

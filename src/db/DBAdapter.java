@@ -18,7 +18,7 @@ public class DBAdapter {
     public static final String TELEFONO = "telefono";
     public static final String EMAIL = "email";
     public static final String CP = "cp";
-    public static final String USER = "usuario";
+    public static final String RFC = "rfc";
     public static final String PASS = "password";
 
     public static final String TABLE_NAME = "usuarios";
@@ -41,7 +41,7 @@ public class DBAdapter {
     public long agregar(String n, String ap, String dir, String tel, String email, String cp, String user, String pass){
         this.open();
 
-        Cursor miCursor = db.query(TABLE_NAME, new String[]{USER,PASS}, "usuario = ? and password = ? ",
+        Cursor miCursor = db.query(TABLE_NAME, new String[]{RFC,PASS}, "rfc = ? and password = ? ",
                 new String[] {user, pass}, null, null, null);
         miCursor.moveToFirst();
 
@@ -53,18 +53,30 @@ public class DBAdapter {
             values.put(TELEFONO, tel);
             values.put(EMAIL, email);
             values.put(CP, cp);
-            values.put(USER, user);
+            values.put(RFC, user);
             values.put(PASS, pass);
             return db.insert(TABLE_NAME, null, values);
         }else{
             return -1;
         }
     }
-
-    public boolean validarLogin(String user, String pass){
+    public boolean validarLogin(String rfc, String pass){
         this.open();
-        Cursor MiCursor = db.query(TABLE_NAME, new String[]{USER, PASS}, "usuario = ? and password = ?",
-                new String[]{user, pass}, null, null, null);
+        Cursor MiCursor = db.query(TABLE_NAME, new String[]{RFC, PASS}, "rfc = ? and password = ?",
+                new String[]{rfc, pass}, null, null, null);
+        if(MiCursor != null)
+            if (MiCursor.getCount() > 0)
+                return true;
+            else
+                return false;
+        else
+            return false;
+    }
+    public boolean validarLogin2(String rfc)
+    {
+        this.open();
+        Cursor MiCursor = db.query(TABLE_NAME, new String[]{RFC}, "rfc = ?",
+                new String[]{rfc}, null, null, null);
         if(MiCursor != null)
             if (MiCursor.getCount() > 0)
                 return true;
@@ -76,8 +88,8 @@ public class DBAdapter {
 
     public Cursor getDatosUsuario(String user){
         this.open();
-        return db.query(TABLE_NAME, new String[]{ID, NOMBRE, APELLIDO, DIRECCION, TELEFONO, EMAIL,CP,USER,PASS},
-                "usuario = ?", new String[]{user}, null, null, null);
+        return db.query(TABLE_NAME, new String[]{ID, NOMBRE, APELLIDO, DIRECCION, TELEFONO, EMAIL,CP, RFC,PASS},
+                "rfc = ?", new String[]{user}, null, null, null);
 
 
     }

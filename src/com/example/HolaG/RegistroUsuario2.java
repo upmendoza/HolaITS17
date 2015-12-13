@@ -15,15 +15,15 @@ import db.DBAdapter;
 public class RegistroUsuario2 extends Activity {
 
     private Button registrar;
-    private EditText usuario,pass,nombre,apellido,direccion,tel,mail,cp;
+    private EditText nombre,apellido,direccion,tel,mail,cp;
+    private String rfc,pass;
 
 
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        final Bundle bundle=new Bundle(getIntent().getExtras());
         setContentView(R.layout.registro_usuario2);
-        usuario = (EditText) findViewById(R.id.txtRfc); //campo de usuario
-        pass = (EditText) findViewById(R.id.txtPassword); //campo de password
         nombre = (EditText) findViewById(R.id.txtNombre); //campo de nombre
         apellido = (EditText) findViewById(R.id.txtApellido); //campo de apellido
         direccion = (EditText) findViewById(R.id.txtDireccion); //campo de direccion
@@ -31,6 +31,8 @@ public class RegistroUsuario2 extends Activity {
         mail = (EditText) findViewById(R.id.txteMail); //campo de email
         cp = (EditText) findViewById(R.id.txtCodigoPostal); //campo de codigo postal
 
+        rfc=bundle.getString("rfc");
+        pass=bundle.getString("password");
         registrar = (Button)findViewById(R.id.btnRegistrar);
 
         final Datos login = new Datos();
@@ -48,8 +50,8 @@ public class RegistroUsuario2 extends Activity {
                                  tel.getText().toString(),
                                  mail.getText().toString(),
                                  cp.getText().toString(),
-                                 usuario.getText().toString(),
-                                 pass.getText().toString()) != -1) {
+                                 bundle.getString("rfc"),
+                                 pass) != -1) {
 
 
                            Toast.makeText(getApplication(), "Registro Exitoso ", Toast.LENGTH_SHORT).show();

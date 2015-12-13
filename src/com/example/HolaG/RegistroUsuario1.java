@@ -15,30 +15,27 @@ import db.DBAdapter;
 public class RegistroUsuario1 extends Activity {
 
     private Button continuar;
-    //private EditText rfc,pass;
+    private EditText rfc,pass,Rpass;
+    //private String rfcs[]=new String[]{"JUHA7807197W7","URDJ940617","MAFJ920217"};
 
 
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registro_usuario);
-       // rfc = (EditText) findViewById(R.id.txtRfc); //campo de usuario
-        //pass = (EditText) findViewById(R.id.txtPassword); //campo de password
-        /*nombre = (EditText) findViewById(R.id.txtNombre); //campo de nombre
-        apellido = (EditText) findViewById(R.id.txtApellido); //campo de apellido
-        direccion = (EditText) findViewById(R.id.txtDireccion); //campo de direccion
-        tel = (EditText) findViewById(R.id.txtTelefono); //campo de telefono
-        mail = (EditText) findViewById(R.id.txteMail); //campo de email
-        cp = (EditText) findViewById(R.id.txtCodigoPostal); //campo de codigo postal*/
+        rfc = (EditText) findViewById(R.id.txtRfc); //campo de usuario
+        pass = (EditText) findViewById(R.id.txtPassword); //campo de password
+        Rpass = (EditText) findViewById(R.id.txtRPass); //campo de password
+
+
+        final DBAdapter bd = new DBAdapter(this.getApplicationContext());// ponia el error que tenia qe ser final
 
         continuar = (Button)findViewById(R.id.btnContinuar);
 
        // final Datos login = new Datos();
-        //final DBAdapter bd = new DBAdapter(this.getApplicationContext());// ponia el error que tenia qe ser final
 
         continuar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
 //                login.addLogin(user.getText().toString(), pass.getText().toString());
 /*
                 if (bd.agregar(nombre.getText().toString(),
@@ -55,15 +52,38 @@ public class RegistroUsuario1 extends Activity {
                     irLogin();
                 } else {
                     Toast.makeText(getApplication(), "Usuario Duplicado ", Toast.LENGTH_LONG).show();
-
                 }*/
-                irRegistroUsuarios2();
+                if(pass.getText().toString().equals(Rpass.getText().toString()))
+                {
+                    if(bd.validarLogin2(rfc.getText().toString()))
+                    {
+                        regresarLogin();
+                        Toast.makeText(getApplication(),"Usuario ya esta registrado ",Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        irRegistroUsuarios2();
+                    }
+                }
+                else
+                {
+                    Toast.makeText(getApplication(),"Las contraseñas no coinsiden ",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }
     public void irRegistroUsuarios2()
     {
         Intent Act=new Intent(this,RegistroUsuario2.class);
+        Act.putExtra("rfc",rfc.getText().toString());
+        Act.putExtra("password",pass.getText().toString());
         startActivity(Act);
     }
+    public void regresarLogin()
+    {
+        Intent Act=new Intent(this,Login.class);
+        startActivity(Act);
+    }
+
 }
