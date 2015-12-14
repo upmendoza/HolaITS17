@@ -8,7 +8,7 @@
 		  android:layout_width="fill_parent"
 		  android:layout_height="fill_parent"
 		  android:id="@+id/scrollView"
-		  android:layout_alignParentTop="true">
+		  android:layout_alignParentTop="true" android:background="@drawable/gradient_bg">
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 					 android:orientation="vertical"
@@ -29,7 +29,7 @@
 				android:autoText="false"
 				android:linksClickable="false"
 				android:layout_alignParentTop="true"
-				android:layout_centerHorizontal="true"/>
+				android:layout_centerHorizontal="true" android:textColor="#ff000000" android:textStyle="bold"/>
 	<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
 				android:id="@+id/textView2"
 				android:layout_marginTop="53dp"
 				android:layout_below="@+id/textView4"
-				android:layout_alignParentLeft="true"/>
+				android:layout_alignParentLeft="true" android:textColor="#ff000000"/>
 	<EditText
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
 				android:id="@+id/txtRfc"
 				android:hint="@string/login_usr"
 				android:layout_below="@+id/textView2"
-				android:layout_alignParentLeft="true"/>
+				android:layout_alignParentLeft="true" android:textColor="#ff000000"/>
 	<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
 				android:text="@string/login_pass"
 				android:id="@+id/textView3"
 				android:layout_below="@+id/txtRfc"
-				android:layout_alignParentLeft="true"/>
+				android:layout_alignParentLeft="true" android:textColor="#ff000000"/>
 	<EditText
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -73,16 +73,15 @@
 				android:layout_gravity="center_horizontal"
 				android:layout_marginTop="51dp"
 				android:layout_below="@+id/etPass"
-				android:layout_alignParentRight="true"/>
-	<Button
-				android:layout_width="wrap_content"
-			  android:layout_height="wrap_content"
-			  android:text="@string/registrarse"
-			  android:id="@+id/btRegistrar"
-			  android:layout_gravity="bottom"
-			  android:paddingRight="10dp"
-			  android:paddingLeft="10dp"
-			  android:layout_below="@+id/btIniciar" android:layout_centerHorizontal="true"/>
+				android:layout_alignParentRight="true" android:clickable="true"/>
+	<TextView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textAppearance="?android:attr/textAppearanceLarge"
+android:text="@string/registrarse"
+android:id="@+id/reg" android:layout_centerHorizontal="true"
+android:textColor="#ff000000" android:layout_below="@+id/btIniciar" android:editable="true"
+android:singleLine="false"/>
 
 </RelativeLayout>
 </ScrollView>

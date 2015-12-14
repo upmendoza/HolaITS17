@@ -3,7 +3,7 @@
         android:orientation="horizontal"
         android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent">
+        android:layout_width="fill_parent" android:background="@drawable/gradient_bg">
     <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -28,14 +28,14 @@
                     android:autoText="false"
                     android:linksClickable="false"
                     android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true"/>
+                    android:layout_centerHorizontal="true" android:textColor="#ff000000" android:textStyle="bold"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/numero_folio"
                     android:id="@+id/textView6" android:layout_below="@+id/btnEscanear"
                     android:layout_alignParentLeft="true" android:layout_marginTop="65dp"
-                    android:layout_alignRight="@+id/txtFolioManual"/>
+                    android:layout_alignRight="@+id/txtFolioManual" android:textColor="#ff000000"/>
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -53,12 +53,6 @@
             <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/Canselar"
-                    android:id="@+id/btnCancelarDatosFactura"
-                    android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"/>
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:text="@string/Aceptar"
                     android:id="@+id/btnHacerFactura"
                     android:layout_alignParentBottom="true" android:layout_alignRight="@+id/txtFolioManual"/>
@@ -69,7 +63,7 @@
                     android:text="@string/escanee_codigo_manualmente"
                     android:id="@+id/textView" android:layout_below="@+id/textView4"
                     android:layout_alignParentLeft="true" android:layout_marginTop="40dp"
-                    android:textAlignment="center"/>
+                    android:textAlignment="center" android:textColor="#ff000000"/>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

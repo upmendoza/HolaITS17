@@ -3,7 +3,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".SplashScreenActivity" android:background="@color/white">
+                tools:context=".SplashScreenActivity" android:background="@drawable/gradient_bg">
 
    <ImageView
            android:layout_width="326dp"

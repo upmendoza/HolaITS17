@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import db.DBAdapter;
 
@@ -14,8 +15,9 @@ public class Login extends Activity
    public static Datos login = new Datos(); // objeto para validar datos de login
     /** Called when the activity is first created. */
 
-    private Button iniciar, registrar;
+    private Button iniciar;
     private EditText user,pass;
+    private TextView reg;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -25,9 +27,8 @@ public class Login extends Activity
         user = (EditText) findViewById(R.id.txtRfc); //campo de usuario
         pass = (EditText) findViewById(R.id.etPass); //campo de password
 
-        registrar = (Button)findViewById(R.id.btRegistrar);
         iniciar = (Button) findViewById(R.id.btIniciar); // boton iniciar
-
+        reg=(TextView)findViewById(R.id.reg);
        final DBAdapter bd = new DBAdapter(getApplicationContext());
 
         iniciar.setOnClickListener(new View.OnClickListener() {
@@ -73,12 +74,11 @@ public class Login extends Activity
                 }
             }
         });
-        registrar.setOnClickListener(new View.OnClickListener() {
+        reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 irRegistro();
             }
-
         });
     }
     public void irRegistro()

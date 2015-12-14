@@ -3,7 +3,7 @@
         android:orientation="horizontal"
         android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent">
+        android:layout_width="fill_parent" android:background="@drawable/gradient_bg">
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -26,7 +26,8 @@
                             android:autoText="false"
                             android:linksClickable="false"
                             android:layout_alignParentTop="true"
-                            android:layout_centerHorizontal="true"/>
+                            android:layout_centerHorizontal="true" android:textColor="#ff000000"
+                            android:textStyle="bold"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -37,25 +38,25 @@
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:text="@string/fecha_factura"
-                                android:id="@+id/textView9"/>
+                                android:id="@+id/textView9" android:textColor="#ff000000" android:textStyle="bold"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:text="fechatxt"
-                                android:id="@+id/verFecha"/>
+                                android:id="@+id/verFecha" android:textColor="#ff000000"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:text="@string/no_factura"
-                                android:id="@+id/textView10"/>
+                                android:id="@+id/textView10" android:textColor="#ff000000" android:textStyle="bold"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:text="verNuFactura"
-                                android:id="@+id/verNfactura"/>
+                                android:id="@+id/verNfactura" android:textColor="#ff000000"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -66,37 +67,37 @@
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:text="@string/nombre_cliente"
-                                android:id="@+id/textView12"/>
+                                android:id="@+id/textView12" android:textColor="#ff000000" android:textStyle="bold"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:text="Medium Text"
-                                android:id="@+id/verNombreCliente"/>
+                                android:id="@+id/verNombreCliente" android:textColor="#ff000000"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:text="@string/direccion_cliente"
-                                android:id="@+id/textView13"/>
+                                android:id="@+id/textView13" android:textColor="#ff000000" android:textStyle="bold"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:text="Medium Text"
-                                android:id="@+id/verDireccionCliente"/>
+                                android:id="@+id/verDireccionCliente" android:textColor="#ff000000"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:text="@string/telefono_cliente"
-                                android:id="@+id/textView14"/>
+                                android:id="@+id/textView14" android:textColor="#ff000000" android:textStyle="bold"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:text="Medium Text"
-                                android:id="@+id/verTelefonoCliente"/>
+                                android:id="@+id/verTelefonoCliente" android:textColor="#ff000000"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -110,14 +111,6 @@
                         <RelativeLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="fill_parent">
-                                <Button
-                                        android:layout_width="107dp"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/Canselar"
-                                        android:id="@+id/cancelarFacturaVista"
-                                        android:layout_alignParentTop="true"
-                                        android:layout_toLeftOf="@+id/AceptarFacturaVista"
-                                        android:layout_marginRight="43dp"/>
                                 <Button
                                         android:layout_width="104dp"
                                         android:layout_height="wrap_content"
