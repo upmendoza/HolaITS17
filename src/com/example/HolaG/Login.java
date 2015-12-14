@@ -53,7 +53,7 @@ public class Login extends Activity
                     HttpHandler httpHandler = new HttpHandler();
                     final String[] respuesta = httpHandler.Login(user.getText().toString(), pass.getText().toString());
                     if (respuesta[0].equals("1")) {
-                        bd.agregar(respuesta[1],respuesta[2],respuesta[3],respuesta[4],respuesta[5],respuesta[6],respuesta[7],respuesta[8]);
+                        bd.agregar(respuesta[2],respuesta[3],respuesta[4],respuesta[5],respuesta[6],respuesta[7],respuesta[8],respuesta[9]);
                         Toast.makeText(getApplication(), "Login Correcto", Toast.LENGTH_SHORT).show();
                         contador = 0;
                         irFactura();
