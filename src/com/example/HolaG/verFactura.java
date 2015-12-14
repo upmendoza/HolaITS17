@@ -24,6 +24,7 @@ public class verFactura extends Activity
     private TextView direccion;
     private TextView telefono;
     private Button aceptar;
+    private String usuario;
     Cursor cursor;
     DBAdapter adapter;
 
@@ -61,11 +62,14 @@ public class verFactura extends Activity
 
         telefono.setText(cursor.getString(4));
 
+        usuario = bundle.getString("Usuario");
+//        System.out.println( " USUARIO L66 => " + usuario);
+
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 HttpHandler httpHandler = new HttpHandler();
-              final String resp =  httpHandler.Factura(folio.getText().toString());
+              final String resp =  httpHandler.Factura(folio.getText().toString(),usuario);
 
                 if(resp.equals("1")){
                     Toast.makeText(getApplicationContext(),"Factura Correcta",Toast.LENGTH_LONG).show();

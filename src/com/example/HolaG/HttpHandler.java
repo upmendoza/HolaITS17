@@ -19,7 +19,7 @@ import java.util.LinkedList;
 public class HttpHandler {
 
 //    private String url = "http://192.168.1.67/webservice/prueba.php";
-    private String url = "http://192.168.1.86/webservice/webservice.php";
+    private String url = "http://192.168.1.71/webservice/webservice.php";
 //    private String url = "http://189.252.237.128/webservice/webservice.php";
 
 
@@ -96,7 +96,7 @@ public class HttpHandler {
         }
     }//end method registro
 
-    public String Factura(String folio){
+    public String Factura(String folio, String rfc){
         try {
 
             HttpClient httpClient = new DefaultHttpClient();
@@ -107,6 +107,7 @@ public class HttpHandler {
             LinkedList<NameValuePair> parametros = new LinkedList<NameValuePair>();
             parametros.add(new BasicNameValuePair("opc","factura"));
             parametros.add(new BasicNameValuePair("folio",folio));
+            parametros.add(new BasicNameValuePair("rfc",rfc));
 
 
             httpPost.setEntity(new UrlEncodedFormEntity(parametros));
