@@ -12,7 +12,7 @@ import android.view.Window;
  * Created by Jorge on 25/11/15.
  */
 public class Splash extends Activity {
-
+    //esta clase es la que contiene la imagen de inicio de la aplicacion SPLASH
     private static final long SPLASH_SCREEN_DELAY = 3000;
 
     protected void onCreate(Bundle savedInstanceState) {

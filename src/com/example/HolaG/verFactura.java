@@ -18,6 +18,7 @@ import java.util.GregorianCalendar;
  */
 public class verFactura extends Activity
 {
+    //se declaran estas variables para poder obtener valores desde el layout verFactura
     private TextView folio;
     private TextView fecha;
     private TextView nombre;
@@ -25,6 +26,7 @@ public class verFactura extends Activity
     private TextView telefono;
     private Button aceptar;
     private String usuario;
+    //--------------------------------------------------------------------------------------
     Cursor cursor;
     DBAdapter adapter;
 

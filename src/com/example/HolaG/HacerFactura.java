@@ -15,20 +15,21 @@ import la.droid.qr.Services;
  * Created by Juan Antonio Mtz on 25/11/2015.
  */
 public class HacerFactura extends Activity {
-
+    //se declaran variables privadas
     private static final int ACTIVITY_RESULT_QR_DRDROID = 0;
     private EditText nombre, folio;
     private Button aceptar;
     private String usuario;
 
     @Override
+    //metodo para crear o enlazar el layout a la clase
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = getIntent().getExtras();
-        setContentView(R.layout.hacer_factura);
-        usuario = bundle.getString("Usuario");
-        aceptar = (Button) findViewById(R.id.btnHacerFactura);
-        folio = (EditText) findViewById(R.id.txtFolioManual);
+        Bundle bundle = getIntent().getExtras();//bundle se utiliza para obtener valores de otras clases
+        setContentView(R.layout.hacer_factura);//aqui dice que hacer factura sera la que se mostrara en esta clase
+        usuario = bundle.getString("Usuario");//se obtiene el bundle con id de Usuario
+        aceptar = (Button) findViewById(R.id.btnHacerFactura); //aceptar que hace referencia a el boton  hacer factura de el layout
+        folio = (EditText) findViewById(R.id.txtFolioManual);//folio tomara el valor de el campo de texto folio
 
         //Get Spinner instance
         //final Spinner spinner = (Spinner) findViewById(R.id.spin_complete);
@@ -36,6 +37,7 @@ public class HacerFactura extends Activity {
         //"Scan" button
         final Button button = (Button) findViewById(R.id.btnEscanear);
         //Set action to button
+        // metedo que envia a la clase scan de la aplicacion
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +58,7 @@ public class HacerFactura extends Activity {
                 }
             }
         });
-
+        //metodo de ir a factura
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +76,7 @@ public class HacerFactura extends Activity {
     @Override
     /**
      * Reads data scanned by user and returned by QR Droid*/
+    //metodo para leer los datos resivido por el escaner
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -87,7 +90,6 @@ public class HacerFactura extends Activity {
             nombre = (EditText)findViewById(R.id.txtFolioManual);
             nombre.setText(data.getExtras().getString(Services.RESULT));
             irDetalleFactura();
-
         }
     }
 
@@ -96,13 +98,14 @@ public class HacerFactura extends Activity {
         super.onConfigurationChanged(newConfig);
         //Nothing
     }
-
+//metodo que obtiene valores y los mantiene para su uso con bundle este metodo redirecciona a ver factura
     public void irDetalleFactura(){
         Intent act = new Intent(this,verFactura.class);
         act.putExtra("Folio",folio.getText().toString());
         act.putExtra("Usuario",usuario);
         startActivity(act);
     }
+    //----------------------------------------------------------
 
 
 }
